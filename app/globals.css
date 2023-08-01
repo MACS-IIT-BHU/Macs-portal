@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+*{
+   
+}
+
+.navbar-hero{
+    background-color: #060019;
+    color: white;
+}
