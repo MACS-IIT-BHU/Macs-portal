@@ -1,7 +1,6 @@
 import Hero from "@/components/Home/hero";
 import Articles from "@/components/Home/articles";
 import Alums from "@/components/Home/alums";
-import Navbar from "@/components/navbar";
 import Image from "next/image";
 
 export default function Home() {
