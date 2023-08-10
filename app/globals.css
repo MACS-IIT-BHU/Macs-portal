@@ -2,17 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
-   
+* {
 }
 
-.navbar-hero{
-    background-color: #060019;
-    color: white;
+.navbar-hero {
+  background-color: #060019;
+  color: white;
 }
 
 
-.textForEvents{
-    background-color: red;
+.textForEvents {
+  background-color: red;
 }
