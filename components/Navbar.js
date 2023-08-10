@@ -18,7 +18,7 @@ const Navbar = () => {
                 </div>
                 <div>Logo</div>
                 <div>
-                    <button className='px-3 py-2 signup-login rounded-xl'>Login/Signup</button>
+                    <button className='px-3 py-2 signup-login rounded-xl font-medium text-lg'>Login/Signup</button>
                 </div>
 
             </div>
