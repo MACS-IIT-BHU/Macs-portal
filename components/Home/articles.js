@@ -4,7 +4,6 @@ import React, { Fragment } from 'react'
 //import a from "@/public/home/a.jpg"
 // import Readmore from "./readmore.js"//border-solid border-2 border-indigo-600
 
-const arr = <button type="button" className="text-white bg-[#ffa500] focus:ring-2 font-black rounded-full px-2 text-center mr-0 mb-0">&gt;</button>
 const Articles = () => {
     function read() {
         var abcd = document.getElementById("abc");
@@ -71,9 +70,8 @@ const Articles = () => {
                     <div className=" text-center bg-[rgb(255,255,255)] cursor-pointer rounded-lg " >
 
                         <div>
-                            <button onClick={read} className='pt-2 pb-2  w-[150px] h-[auto]  ' id='abcdef'>Read More &nbsp;
-                                <button type="button" className="text-white bg-[#ffa500] focus:ring-2 font-black rounded-full px-2 text-center mr-0 mb-0">&gt;</button>
-                            </button>
+                            <button onClick={read} className='pt-2 pb-2  w-[150px] h-[auto]  ' id='abcdef'>Read More &nbsp;</button>
+                            <button type="button" className="text-white bg-[#ffa500] focus:ring-2 font-black rounded-full px-2 text-center mr-0 mb-0">&gt;</button>
                         </div>
                     </div>
                 </div>
