@@ -14,3 +14,12 @@
 .textForEvents {
   background-color: red;
 }
+
+.containimg{
+  width: 45px;
+  max-width: 45px;
+  object-fit: cover;
+}
+.containimg svg {
+  vertical-align: middle; /* or vertical-align: top; */
+}
