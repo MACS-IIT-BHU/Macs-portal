@@ -1,18 +1,14 @@
+'use client'
 import React from 'react'
-import a from "@/public/home/a.jpg"
-import Image from 'next/image'
-
-
-
-
+import classes from './imageSlider.module.css';
+import {ImageSlider} from './image_slider_component';
 const Alums = () => {
-    return (
-        <div className="flex py-24 px-[10vw] min-h-screen navbar-hero w-full">
-            <div className="flex flex-col items-center gap-4">
-                <h4>Our Alums</h4>
-                <Image src={a} alt="abc" />
-
-            </div>
+   return (
+        <div className="min-h-screen navbar-hero w-full">
+           <h4 className={classes.ouralums}>Our Alums</h4>
+           <div className={classes.imageContainer}>
+            <ImageSlider></ImageSlider>
+           </div>
         </div>
     )
 }
