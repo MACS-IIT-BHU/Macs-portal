@@ -5,7 +5,7 @@ import MACSlogo from "@/public/home/MACS logo.png"
 
 const Hero = () => {
     return (
-        <div className="flex flex-col md:flex md:flex-row items-center bg-[#060019] text-white md:pb-[50px]   ">
+        <div className="flex flex-col md:flex md:flex-row items-center bg-[#060019] text-white pb-[50px]   ">
             <div className="flex-1 ml-[5vw]  mr-[5vw] ">
                 <Image src={MACSlogo} alt="abc" />
             </div>

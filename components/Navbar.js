@@ -17,6 +17,9 @@ const Navbar = () => {
                     <Link href="/announcements" className='font-medium hover:text-[#ffc300]'>
                         Announcements
                     </Link>
+                    <Link href="/teams" className='font-medium hover:text-[#ffc300]'>
+                        Ann
+                    </Link>
                 </div>
                 <div>
                     <Image src={smalllogo} alt="abc" />
