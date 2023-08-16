@@ -15,9 +15,10 @@ let image_url_container=[img1,img2,img3]
 function ImageSlider() {
    let image_container=image_url_container.map((item,pos)=>{
     return(
-      <section class={classes.scroll_item} ><Image
+      <section className={classes.scroll_item} key={pos}><Image
       src={item}
       className={classes.macs_images}
+      alt = "img"
     /></section>
     )
    })

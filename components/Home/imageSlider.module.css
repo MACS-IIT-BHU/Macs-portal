@@ -51,7 +51,7 @@
   height: 41.3vh;
   scroll-snap-align: center;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   font-size: 2rem;
   background-color:#525FE1;
