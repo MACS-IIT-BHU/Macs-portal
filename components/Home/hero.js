@@ -1,12 +1,15 @@
 import Image from 'next/image'
 import React from 'react'
-import a from "@/public/home/a.jpg"
+import MACSlogo from "@/public/home/MACS logo.png"
 
 
 const Hero = () => {
     return (
-        <div className="flex items-center py-12 pt-20 navbar-hero px-[10vw]">
-            <div className="flex-1">
+        <div className="flex flex-col md:flex md:flex-row items-center bg-[#060019] text-white pb-[50px]   ">
+            <div className="flex-1 ml-[5vw]  mr-[5vw] ">
+                <Image src={MACSlogo} alt="abc" />
+            </div>
+            <div className="flex-1 mr-[5vw] ml-[5vw] text-justify">
                 <h2 className="">
                     Mathematics and Computing Society (MACS) is a non-profit organization
                     run by the students of The Department of Mathematical Sciences.
@@ -20,9 +23,7 @@ const Hero = () => {
                     We organize various events, workshops, seminars, coding competitions, hackathons, and guest lectures to promote learning, foster a sense of community, and encourage participation in technical activities
                 </h2>
             </div>
-            <div className="flex-1">
-                <Image src={a} alt="abc" />
-            </div>
+            
 
         </div>
     )
