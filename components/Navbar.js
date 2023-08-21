@@ -1,95 +1,96 @@
 "use client";
 import Link from 'next/link';
-import smalllogo from "@/public/home/logo.png";
+import smalllogo from "@/public/home/logo.svg";
 import Image from "next/image"
 import { useState } from 'react';
+import { usePathname } from 'next/navigation'
+import { Bitter, Monomaniac_One, Montserrat, Nanum_Brush_Script } from 'next/font/google';
+import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx'
+import { Murecho } from 'next/font/google'
+// import { Murecho } from 'next/font/google'
 
-
+const murecho = Murecho({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 export default function Home() {
     const [navbar, setNavbar] = useState(false);
+    const path = usePathname();
+
     return (
         <div>
-            <nav className="w-full navbar-hero py-4">
-                <div className="justify-between mx-4 px-4 md:items-center md:flex">
-                    <div className='md:hidden'>
-                        <div className="flex items-center justify-between py-3 md:py-5 md:block">
+            <nav className={`w-full navbar-hero md:pb-2 bg-gradient-to-r to-cyan-300 from-cyan-600 fixed z-20 ${murecho.className}`}>
+                <div className={`relative mx-4  px-4 md:items-center md:flex md:justify-between ${navbar ? '' : 'h-16'}`}>
+                    <div className='md:hidden justify-self-start grow'>
+                        <div className="flex items-center justify-between pt-2 md:py-5 md:block">
                             <div>
                                 <button
                                     className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
                                     onClick={() => setNavbar(!navbar)}
                                 >
                                     {navbar ? (
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="w-6 h-6 text-white"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                fillRule="evenodd"
-                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                clipRule="evenodd"
-                                            />
-                                        </svg>
+                                        <RxCross1 size={25} color="white" />
                                     ) : (
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="w-6 h-6 text-white"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M4 6h16M4 12h16M4 18h16"
-                                            />
-                                        </svg>
+                                        <RxHamburgerMenu size={25} color="white" />
                                     )}
                                 </button>
                             </div>
 
-                            <div className='sm:visible md:invisible'>
-                                <button className='px-3 py-2 bg-[#ffc300] shadow-lg text-[#08031b] shrink-0 rounded-xl font-medium'>Login/Signup</button>
+                            <div className='md:invisible sm:visible '>
+                                <div className='flex items-center justify-center gap-2  px-2 '>
+                                    <div className='cursor-pointer  px-5 py-2  rounded-3xl bg-[#146c94] b_shadow translate-x-5'>Login</div>
+                                    <div className='bg-white text-black py-2 px-5 b_shadow rounded-r-3xl text-right'>Signup</div>
+                                </div>
                             </div>
 
                         </div>
                     </div>
-                    <div>
-                        <div className={`pb-3 mt-8 md:block md:pb-0 md:mt-0 md:px-0 ${navbar ? 'block' : 'hidden'
+                    <div className='justify-self-start'>
+                        <div className={`pb-3 md:block md:pb-0 md:mt-0 md:px-0 ${navbar ? 'block' : 'hidden'
                             }`}>
-                            <ul className="font-medium flex flex-col p-4 md:p-2 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 md:space-y-0 space-y-4">
-                                <li>
-                                    <Link href="/" className='font-medium hover:text-[#ffc300] my-8'>
+                            <ul className={`flex flex-col p-4 md:pb-2 md:pt-0 mt-4 border rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0 md:space-y-0 space-y-4 ${montserrat.className}`}>
+                                <li className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == '/' ? 'bg-white' : ''}`}>
+                                    <Link href="/" className='font-medium text-black/75 hover:text-black/100 my-8'>
                                         Home
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link href="/events" className='font-medium hover:text-[#ffc300]'>
+                                <li className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == '/events' ? 'bg-white' : ''}`}>
+                                    <Link href="/events" className='font-medium  text-black/75 hover:text-black/100 my-8'>
                                         Events
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link href="/announcements" className='font-medium hover:text-[#ffc300] my-8'>
+                                <li className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == '/articles' ? 'bg-white' : ''}`}>
+                                    <Link href="/announcements" className='font-medium  text-black/75 hover:text-black/100 my-8'>
                                         Articles
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link href="/teams" className='font-medium hover:text-[#ffc300] my-8'>
+                                <li className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == '/tgallery' ? 'bg-white' : ''}`}  >
+                                    <Link href="/teams" className='font-medium  text-black/75 hover:text-black/100 my-8'>
+                                        Gallery
+                                    </Link>
+                                </li>
+                                <li className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == '/team' ? 'bg-white' : ''}`}  >
+                                    <Link href="/teams" className='font-medium  text-black/75 hover:text-black/100 my-8'>
                                         Team
                                     </Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <center>
-                        <div className="invisible md:visible">
-                            <Image src={smalllogo} width={120} alt="abc" />
+                    <div className="absolute   sm:top-0 top-0 left-[50%] -translate-x-[50%] translate-y-[5%]">
+                        <center>
+                            <Image src={smalllogo} width={180} alt="abc" />
+                        </center>
+                    </div>
+                    {/* <div className="invisible md:visible grow">
+                        <div className='bg-white border rounded-3xl shadow-xl shadow-gray-600 align-right'>
+                            <button className='px-3 py-2 bg-[#146C94] text-white shrink-0 rounded-3xl font-medium'>Login</button>
+                            <button className='px-3 py-2 bg-white text-[#000] shrink-0 rounded-r-3xl font-medium'>Signup</button>
                         </div>
-                    </center>
-                    <div className="invisible md:visible">
-                        <button className='px-3 py-2 bg-[#ffc300] shadow-lg text-[#08031b] shrink-0  rounded-xl font-medium'>Login/Signup</button>
+                    </div> */}
+                    <div className='invisible md:visible '>
+                        <div className='flex items-center justify-center gap-2  px-2 '>
+                            <div className='cursor-pointer px-5 py-2  rounded-3xl bg-[#146c94] translate-x-5 b_shadow'>Login</div>
+                            <div className='bg-white text-black py-2 px-5 rounded-r-3xl text-right b_shadow'>Signup</div>
+                        </div>
                     </div>
                 </div>
             </nav >

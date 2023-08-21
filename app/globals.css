@@ -10,16 +10,19 @@
   color: white;
 }
 
-
 .textForEvents {
   background-color: red;
 }
 
-.containimg{
+.containimg {
   width: 45px;
   max-width: 45px;
   object-fit: cover;
 }
 .containimg svg {
   vertical-align: middle; /* or vertical-align: top; */
+}
+
+.b_shadow {
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 5px;
 }
