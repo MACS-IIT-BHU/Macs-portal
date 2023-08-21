@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #060019;
+  background:linear-gradient(to right,#009DD6,#00CBD6);
   min-height: 70vh;
   width: 100vw;
 }
@@ -129,5 +129,5 @@
 }
 /* For the active dot */
 .active {
-  background-color: #007bff; /* Change this to the color you want for the active dot */
+  background-color: #3c0078; /* Change this to the color you want for the active dot */
 }
