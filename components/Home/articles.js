@@ -7,11 +7,7 @@ import React, { Fragment } from 'react'
 
 const Articles = () => {
     function read() {
-        var abcd = document.getElementById("abc");
-        abcd.className = "w-[80%]  h-[292px] bg-[#D9D9D9] shadow-xl show"
-        var readm = document.getElementById("abcdef");
-        readm.innerHTML = "Click here for Events"
-
+        console.log("events");
     }
 
     return (
@@ -27,7 +23,43 @@ const Articles = () => {
             </div>
 
             <div className=" mt-10 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0 lg:w-[50vw] md:w-[50vw] sm:w-[80%] flex flex-wrap pl-4 gap-x-6 gap-y-16 items-center justify-around ">
-                <div className="w-[80%]  h-[292px] bg-[#D9D9D9] shadow-xl ">
+                <div className="w-[80%]  h-[214px] bg-[#D9D9D9] shadow-xl ">
+                    <div className='w-[100%] pt-[3%] px-[3%] h-[154px] bg-[#F1F1F1]'>
+                        Many fields of mathematics rely on convexity and nonconvexity, especially when stud-16 ying optimization issues, where it stands out for a variety of practical aspects. Due to the behaviour 17 of its definition, the idea of convexity also contributes significantly to the discussion of inequalities.</div>
+                    
+                    <div className=' flex flex-row w-[100%]  h-[60px] bg-[#ffffff]'>
+                        <div className=' w-[70%] pt-[3%] pl-[3%] pb-[3%]'>Some Fuzzy Inequalities for Harmonically </div>
+
+                        <div className='text-right pt-[6%] pb-[3%] pr-4 w-[30%] text-slate-400 text-sm'>12 August,2023</div>
+
+                    </div>
+                    <div className=' text-slate-400 text-sm pl-2 pt-2 pb-3'>SK Pandey</div>
+                </div>
+                <div className="w-[80%]  h-[214px] bg-[#D9D9D9] shadow-xl">
+                    <div className='w-[100%]  h-[154px] pt-[3%] px-[3%]  bg-[#F1F1F1]'>
+                    In everyday life, rolling motion is typically associated with cylindrical  or spherical bodies tracing linear paths. However, mathematicians have, for decades, been interested in more exotically shaped solids such as the famous oloids1, sphericons2, polycons3, platonicons4 and two-circle rollers5 that roll downhill in curvilinear paths (in contrast to cylinders or spheres) yet indefinitely (in contrast to cones, Supplementary Video 1).
+                    </div>
+                    <div className=' flex flex-row w-[100%]  h-[60px] bg-[#ffffff]'>
+                        <div className=' w-[50%] pt-[3%] pl-[3%] pb-[3%]'>Solid-body trajectoids shaped to roll</div>
+
+                        <div className='text-right pt-[6%] pb-[3%] pr-4 w-[50%] text-slate-400 text-sm'>12 August,2023</div>
+
+                    </div>
+                    <div className=' text-slate-400 text-sm pl-2 pt-2 pb-3'>Subir Das</div>
+                </div>
+                <div className="w-[80%]  h-[214px] bg-[#D9D9D9] shadow-xl">
+                    <div className='w-[100%] pt-[3%] px-[3%] h-[154px] bg-[#F1F1F1]'>
+                    The paper presents a novel statistical approach for analyzing the daily coronavirus case and fatality statistics. The survival discretization method was used to generate a two-parameter discrete distribution.
+                    </div>
+                    <div className=' flex flex-row w-[100%]  h-[60px] bg-[#ffffff]'>
+                        <div className=' w-[50%] pt-[3%] pb-[3%] pl-4'>Analysis of Covid-19 using discrete</div>
+
+                        <div className='text-right pt-[6%] pb-[3%] pr-4 w-[50%] text-slate-400 text-sm'>12 August,2023</div>
+
+                    </div>
+                    <div className=' text-slate-400 text-sm pl-2 pt-2 pb-3'>Anoop Singh</div>
+                </div>
+                {/* <div className="w-[80%]  h-[292px] bg-[#D9D9D9] hidden shadow-xl show" id='abc'>
                     <div className='w-[100%]  h-[220px] bg-[#D9D9D9]'></div>
                     <div className=' flex flex-row w-[100%]  h-[72px] bg-[#ffffff]'>
                         <div className=' w-[50%] pt-[5%] pb-[5%]'> Title of Article</div>
@@ -36,42 +68,12 @@ const Articles = () => {
 
                     </div>
                     <div className=' text-slate-400 text-sm pl-2 pt-2 pb-3'>Author</div>
-                </div>
-                <div className="w-[80%]  h-[292px] bg-[#D9D9D9] shadow-xl">
-                    <div className='w-[100%]  h-[220px] bg-[#D9D9D9]'></div>
-                    <div className=' flex flex-row w-[100%]  h-[72px] bg-[#ffffff]'>
-                        <div className=' w-[50%] pt-[5%] pb-[5%]'> Title of Article</div>
-
-                        <div className='text-right pt-[5%] pb-[5%] w-[50%] text-slate-400 text-sm'>13:48pm 12 August,2023</div>
-
-                    </div>
-                    <div className=' text-slate-400 text-sm pl-2 pt-2 pb-3'>Author</div>
-                </div>
-                <div className="w-[80%]  h-[292px] bg-[#D9D9D9] shadow-xl">
-                    <div className='w-[100%]  h-[220px] bg-[#D9D9D9]'></div>
-                    <div className=' flex flex-row w-[100%]  h-[72px] bg-[#ffffff]'>
-                        <div className=' w-[50%] pt-[5%] pb-[5%]'> Title of Article</div>
-
-                        <div className='text-right pt-[5%] pb-[5%] w-[50%] text-slate-400 text-sm'>13:48pm 12 August,2023</div>
-
-                    </div>
-                    <div className=' text-slate-400 text-sm pl-2 pt-2 pb-3'>Author</div>
-                </div>
-                <div className="w-[80%]  h-[292px] bg-[#D9D9D9] hidden shadow-xl show" id='abc'>
-                    <div className='w-[100%]  h-[220px] bg-[#D9D9D9]'></div>
-                    <div className=' flex flex-row w-[100%]  h-[72px] bg-[#ffffff]'>
-                        <div className=' w-[50%] pt-[5%] pb-[5%]'> Title of Article</div>
-
-                        <div className='text-right pt-[5%] pb-[5%] w-[50%] text-slate-400 text-sm'>13:48pm 12 August,2023</div>
-
-                    </div>
-                    <div className=' text-slate-400 text-sm pl-2 pt-2 pb-3'>Author</div>
-                </div>
+                </div> */}
 
                 <div className=" text-center bg-[rgb(255,255,255)] cursor-pointer rounded-lg " >
 
                     <div>
-                        <button onClick={read} className='pt-2 pb-2  w-[150px] h-[auto]  ' id='abcdef'>Read More &nbsp;</button>
+                        <button onClick={read} className='pt-2 pb-2  w-[200px] h-[auto]  ' id='abcdef'>Click here for Events &nbsp;</button>
                         <button type="button" className="text-white bg-[#ffa500] focus:ring-2 font-black rounded-full px-2 text-center mr-0 mb-0">&gt;</button>
                     </div>
                 </div>
