@@ -75,7 +75,7 @@ export default function Home() {
                             </ul>
                         </div>
                     </div>
-                    <div className="absolute   sm:top-0 top-0 left-[50%] -translate-x-[50%] translate-y-[5%]">
+                    <div className="absolute   invisible md:visible top-0 left-[50%] -translate-x-[50%] translate-y-[5%]">
                         <center>
                             <Image src={smalllogo} width={180} alt="abc" />
                         </center>
@@ -93,7 +93,6 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                
             </nav>
         </div >
     );
