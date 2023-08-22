@@ -47,7 +47,7 @@ function TeamMember() {
           />
           <Member
             name={"Divyansh Sahu"}
-            position={"Secretary"}
+            position={"Jt. Secretary"}
             image={memImg}
           />
         </div>
