@@ -38,6 +38,21 @@ function TeamMember() {
         </div>
       </div>
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
+        <TeamName team={"Resource & Development Team"} />
+        <div className="flex flex-col md:flex-row gap-10">
+          <Member
+            name={"Lakshya Vardhan Singh Rathore"}
+            position={"Secretary"}
+            image={memImg}
+          />
+          <Member
+            name={"Divyansh Sahu"}
+            position={"Secretary"}
+            image={memImg}
+          />
+        </div>
+      </div>
+      <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Events Team"} />
         <div className="flex flex-col md:flex-row gap-10">
           <Member
@@ -63,21 +78,6 @@ function TeamMember() {
           <Member
             name={"B Niranjan"}
             position={"Jt. Secretary"}
-            image={memImg}
-          />
-        </div>
-      </div>
-      <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
-        <TeamName team={"Resource & Development Team"} />
-        <div className="flex flex-col md:flex-row gap-10">
-          <Member
-            name={"Lakshya Vardhan Singh Rathore"}
-            position={"Secretary"}
-            image={memImg}
-          />
-          <Member
-            name={"Divyansh Sahu"}
-            position={"Secretary"}
             image={memImg}
           />
         </div>
