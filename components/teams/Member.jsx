@@ -14,7 +14,7 @@ function Member({ name, position, image }) {
 
   return (
     <div
-      className={`relative flex items-center gap-5 justify-around px-10 py-5 md:px-10 md:py-8  shadow-md rounded-md member_background  md:bg-white md:hover:bg-gradient-to-r  md:hover:from-[#009DD6] md:hover:to-[#00CBD6] `}
+      className={`relative flex w-[500px] items-center gap-5 justify-around px-10 py-5 md:px-10 md:py-8  shadow-md rounded-md member_background  md:bg-white md:hover:bg-gradient-to-r  md:hover:from-[#009DD6] md:hover:to-[#00CBD6] `}
       onMouseEnter={() => {
         SetSocial(true);
       }}
@@ -50,8 +50,8 @@ function Member({ name, position, image }) {
         </div>
       </div>
       <div className="flex flex-col text-xl ">
-        <span className="text-[17px] md:text-3xl text-center">{name}</span>
-        <span className="text-sm md:text-xl text-center text-gray-500">{position}</span>
+        <span className="text-[24px] md:text-2xl text-center">{name}</span>
+        <span className="text-md md:text-xl text-center text-gray-500">{position}</span>
       </div>
     </div>
   );

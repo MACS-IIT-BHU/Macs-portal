@@ -9,30 +9,30 @@ function TeamMember() {
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Core Team"} />
         <Member
-          name={"Martin king Luther Jr"}
-          position={"Secretary"}
+          name={"Atul Tyagi"}
+          position={"Vice President"}
           image={memImg}
         />
         <div className="grid md:grid-cols-2 md:flex-row gap-10">
           <Member
 
-            name={"Martin king Luther Jr"}
-            position={"Secretary"}
+            name={"Gatla Sushmita"}
+            position={"General Secretary"}
             image={memImg}
           />
           <Member
-            name={"Martin king Luther Jr"}
-            position={"Secretary"}
+            name={"Shivangi Nayak"}
+            position={"Student Advisor"}
             image={memImg}
           />
           <Member
-            name={"Martin king Luther Jr"}
-            position={"Secretary"}
+            name={"Akshat Shah"}
+            position={"Jt. General Secretary"}
             image={memImg}
           />
           <Member
-            name={"Martin king Luther Jr"}
-            position={"Secretary"}
+            name={"Kartik Malik"}
+            position={"Jt. General Secretary"}
             image={memImg}
           />
         </div>
@@ -41,13 +41,13 @@ function TeamMember() {
         <TeamName team={"Events Team"} />
         <div className="flex flex-col md:flex-row gap-10">
           <Member
-            name={"Martin king Luther Jr"}
+            name={"Harsh Lalit Parmar"}
             position={"Secretary"}
             image={memImg}
           />
           <Member
-            name={"Martin king Luther Jr"}
-            position={"Secretary"}
+            name={"Akshat Jain"}
+            position={"Jt. Secretary"}
             image={memImg}
           />
         </div>
@@ -56,13 +56,13 @@ function TeamMember() {
         <TeamName team={"Publications & Alumni Team"} />
         <div className="flex flex-col md:flex-row gap-10">
           <Member
-            name={"Martin king Luther Jr"}
+            name={"Lavish Bansal"}
             position={"Secretary"}
             image={memImg}
           />
           <Member
-            name={"Martin king Luther Jr"}
-            position={"Secretary"}
+            name={"B Niranjan"}
+            position={"Jt. Secretary"}
             image={memImg}
           />
         </div>
@@ -71,12 +71,12 @@ function TeamMember() {
         <TeamName team={"Resource & Development Team"} />
         <div className="flex flex-col md:flex-row gap-10">
           <Member
-            name={"Martin king Luther Jr"}
+            name={"Lakshya Vardhan Singh Rathore"}
             position={"Secretary"}
             image={memImg}
           />
           <Member
-            name={"Martin King Luther Jr"}
+            name={"Divyansh Sahu"}
             position={"Secretary"}
             image={memImg}
           />
