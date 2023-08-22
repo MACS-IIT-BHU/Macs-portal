@@ -93,7 +93,8 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </nav >
+                
+            </nav>
         </div >
     );
 }
