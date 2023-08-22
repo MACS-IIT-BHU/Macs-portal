@@ -10,7 +10,7 @@ const Hero = () => {
                 <Image  src={MACSlogo} alt="abc" />
             </div>
             <div className="flex-1 mr-[5vw] ml-[5vw] text-justify">
-                <h2 className="font-Montserrat">
+                <h2 className="font-Montserrat font-bold drop-shadow-lg">
                     Mathematics and Computing Society (MACS) is a non-profit organization
                     run by the students of The Department of Mathematical Sciences.
                     <br />
