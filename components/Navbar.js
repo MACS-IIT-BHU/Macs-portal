@@ -52,8 +52,8 @@ export default function Home() {
                                         Home
                                     </Link>
                                 </li>
-                                <li className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == '/events' ? 'bg-white' : ''}`}>
-                                    <Link href="" className='font-medium  text-black/75 hover:text-black/100 my-8'>
+                                <li className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == '/announcements' ? 'bg-white' : ''}`}>
+                                    <Link href="/announcements" className='font-medium  text-black/75 hover:text-black/100 my-8'>
                                         Events
                                     </Link>
                                 </li>
