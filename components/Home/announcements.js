@@ -6,17 +6,12 @@ import data from '../../public/database.json'
 
 const Announcements = () => {
     const [jsonData, setJsonData] = useState(data);
-    const [num, setNum] = useState(3);
-
-    const button_handle = () => {
-        setNum(num+3 < jsonData.announcements.length ? num+3: jsonData.announcements.length);
-        console.log(num)
-    }
+    
     return (
         <section id="cd-timeline" class="cd-container">
                     {jsonData.announcements.map((element) => (
                         <div class="cd-timeline-block" key = {element.id}>
-                            {element.id <= num && <div>
+                            {element.id <= 3 && <div>
                             <div class="cd-timeline-img cd-picture">
                                 <img src="https://www.svgrepo.com/show/493649/circle-filled-circle-radio-filled-round-bullet.svg" alt="Picture"></img>
                             </div> 
@@ -38,11 +33,11 @@ const Announcements = () => {
                         </div>))}
 
                         <div class="cd-timeline-block">
-                            <button type='submit' onClick = {button_handle}>
+                            <form href = "/announcements"><button type='submit'>
                                 <div class="cd-timeline-img cd-picture">
                                     <img src="https://www.svgrepo.com/show/80156/down-arrow.svg" alt="Picture"></img>
                                 </div>
-                            </button>
+                            </button></form>
                         </div>
 
                            
