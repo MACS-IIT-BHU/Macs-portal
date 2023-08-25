@@ -15,7 +15,7 @@ const Announcements = () => {
     return (
         <section id="cd-timeline" class="cd-container">
                     {jsonData.announcements.map((element) => (
-                        <div class="cd-timeline-block">
+                        <div class="cd-timeline-block" key = {element.id}>
                             {element.id <= num && <div>
                             <div class="cd-timeline-img cd-picture">
                                 <img src="https://www.svgrepo.com/show/493649/circle-filled-circle-radio-filled-round-bullet.svg" alt="Picture"></img>
