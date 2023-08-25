@@ -1,4 +1,4 @@
-{"articles" : [{
+ [{
     "content" : "Many fields of mathematics rely on convexity and nonconvexity, especially when stud-16 ying optimization issues, where it stands out for a variety of practical aspects. Due to the behaviour 17 of its definition, the idea of convexity also contributes significantly to the discussion of inequalities.",
     "heading" : "Some Fuzzy Inequalities for Harmonically",
     "author" : "SK Pandey",
@@ -18,4 +18,11 @@
     "author" : "SK Pandey",
     "id" : 3,
     "date" : "12 August,2023"
-}]}
+},
+{
+    "content" : "Many fields of mathematics rely on convexity and nonconvexity, especially when stud-16 ying optimization issues, where it stands out for a variety of practical aspects. Due to the behaviour 17 of its definition, the idea of convexity also contributes significantly to the discussion of inequalities.",
+    "heading" : "Some Fuzzy Inequalities for Harmonically",
+    "author" : "SK Pandey",
+    "id" : 4,
+    "date" : "12 August,2023"
+}]
