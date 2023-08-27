@@ -8,9 +8,9 @@ import macsimage from "@/public/home/image2.jpg"
 import React from 'react';
 
 function page(){
+    
     return(
-        <>
-        
+        <> 
      <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -18,22 +18,22 @@ function page(){
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
-    
+      
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
+      
     >
      
 
-<SwiperSlide className='w-[100vw] h-[90vh]  mt-[13vh] ml-[10vw]  flex items-center justify-center'><Image className='w-[80%] h-[80vh]' src={macsimage} alt='image'/></SwiperSlide>
-<SwiperSlide className='w-[100vw] h-[90vh]  mt-[13vh] flex items-center justify-center'><Image className='w-[80%] h-[80vh]' src={macsimage} alt='image'/></SwiperSlide>
-<SwiperSlide className='w-[100vw] h-[90vh]  mt-[13vh] flex items-center justify-center'><Image className='w-[80%] h-[80vh]' src={macsimage} alt='image'/></SwiperSlide>
-<SwiperSlide className='w-[100vw] h-[90vh]  mt-[13vh] flex items-center justify-center'><Image className='w-[80%] h-[80vh]' src={macsimage} alt='image'/></SwiperSlide>
-<SwiperSlide className='w-[100vw] h-[90vh]  mt-[13vh] flex items-center justify-center'><Image className='w-[80%] h-[80vh]' src={macsimage} alt='image'/></SwiperSlide>
-<SwiperSlide className='w-[100vw] h-[90vh]  mt-[13vh] flex items-center justify-center'><Image className='w-[80%] h-[80vh]' src={macsimage} alt='image'/></SwiperSlide>
-<SwiperSlide className='w-[100vw] h-[90vh]  mt-[13vh] flex items-center justify-center'><Image className='w-[80%] h-[80vh]' src={macsimage} alt='image'/></SwiperSlide>
- 
-      ...
-    </Swiper>
+<SwiperSlide className='mt-[13vh] ml-[10vw] h-[80vh] w-[100vw] flex items-center' onClick={()=>history.back()}  ><Image className='w-[80%] h-[40%] md:h-[80vh]' src={macsimage} alt='image'  /></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
+
+</Swiper>
 
 
         </>
