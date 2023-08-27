@@ -8,7 +8,7 @@ import i2 from "@/public/home/image2.jpg"
 //  import i4 from "@/public/home/i"              /*please put the correct image format with name*/
 //  import i5 from "@/public/home/"
 // this section contains all the refs to images to be displayes in alums sections
-
+ 
 
 // let image_url_container=[i2,i2,i2,i2,i2]
 function ImageSlider() {
