@@ -24,14 +24,14 @@ function page(){
       
     >
      
-
-<SwiperSlide className='mt-[13vh] ml-[10vw] h-[80vh] w-[100vw] flex items-center' onClick={()=>history.back()}  ><Image className='w-[80%] h-[40%] md:h-[80vh]' src={macsimage} alt='image'  /></SwiperSlide>
-<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
-<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
-<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
-<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
-<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
-<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><Image className='w-[80%]  h-[40%] md:h-[80vh]' src={macsimage} alt='image' /></SwiperSlide>
+<div className='absolute top-20 left-10 border-2 w-[30px] text-center z-50 border-black rounded-lg cursor-pointer' onClick={()=>history.go(-1)} >←</div>
+<SwiperSlide className='mt-[13vh] ml-[10vw] h-[80vh] w-[100vw] flex items-center' onClick={()=>history.back()}  ><div className='w-[100%] h-[80vh] flex items-center '><Image className='w-[80%] h-[40%] md:h-[80vh] rounded-lg border-2 mb-[20px]  border-black' src={macsimage} alt='image'  /></div></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><div className='w-[100%] h-[80vh] flex items-center '><Image className='w-[80%]  h-[40%] md:h-[80vh] rounded-lg border-2 mb-[20px]  border-black' src={macsimage} alt='image' /></div></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><div className='w-[100%] h-[80vh] flex items-center '><Image className='w-[80%]  h-[40%] md:h-[80vh] rounded-lg border-2 mb-[20px]  border-black' src={macsimage} alt='image' /></div></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><div className='w-[100%] h-[80vh] flex items-center '><Image className='w-[80%]  h-[40%] md:h-[80vh] rounded-lg border-2 mb-[20px]  border-black' src={macsimage} alt='image' /></div></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><div className='w-[100%] h-[80vh] flex items-center '><Image className='w-[80%]  h-[40%] md:h-[80vh] rounded-lg border-2 mb-[20px]  border-black' src={macsimage} alt='image' /></div></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><div className='w-[100%] h-[80vh] flex items-center '><Image className='w-[80%]  h-[40%] md:h-[80vh] rounded-lg border-2 mb-[20px]  border-black' src={macsimage} alt='image' /></div></SwiperSlide>
+<SwiperSlide className='mt-[13vh] h-[80vh] w-[100vw] flex items-center' ><div className='w-[100%] h-[80vh] flex items-center '><Image className='w-[80%]  h-[40%] md:h-[80vh] rounded-lg border-2 mb-[20px]  border-black' src={macsimage} alt='image' /></div></SwiperSlide>
 
 </Swiper>
 
