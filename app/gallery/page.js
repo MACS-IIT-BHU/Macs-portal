@@ -13,7 +13,7 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 function page() {
     return (
        <>
-       <div className={`w-[100vw] h-[200px] bg-gradient-to-r to-cyan-300 from-cyan-600 text-white text-center text-6xl flex justify-center items-center font-bold drop-shadow-5xl pt-[100px] ${montserrat.className}`}>
+       <div className={`w-[100vw] h-[250px] bg-gradient-to-r to-cyan-300 from-cyan-600 text-white text-center text-6xl flex justify-center items-center font-bold drop-shadow-5xl pt-[80px] pb- ${montserrat.className}`}>
       Photo Gallery
     </div>
     <div className='flex justify-center my-[50px] '>
