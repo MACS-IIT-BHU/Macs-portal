@@ -7,13 +7,58 @@ import { usePathname } from 'next/navigation'
 import { Bitter, Monomaniac_One, Montserrat, Nanum_Brush_Script } from 'next/font/google';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx'
 import { Murecho } from 'next/font/google'
+
+
+import { useEffect } from 'react';
+import Cookies from 'js-cookie';
+
 // import { Murecho } from 'next/font/google'
 
 const murecho = Murecho({ subsets: ['latin'] })
 const montserrat = Montserrat({ subsets: ['latin'] })
+
+import { useSession, signIn, signOut } from 'next-auth/react'
+
+
+
+
+
+
 export default function Home() {
     const [navbar, setNavbar] = useState(false);
     const path = usePathname();
+    const [token, setToken] = useState(null);
+
+    const { data: session } = useSession();
+
+    const [userData, setUserData] = useState();
+
+
+
+    useEffect(() => {
+
+        if (session) {
+            setUserData(session.user);
+        }
+
+    }, [session])
+
+
+    // useEffect(() => {
+    //     const token = Cookies.get('token'); // Replace 'token' with the name of your authentication cookie
+
+    //     if (token) {
+    //       // The user is signed in
+    //       console.log('User is signed in');
+    //       setToken(token);
+    //       // You can perform other actions here, like redirecting to a dashboard or showing a "Sign Out" button.
+    //     } else {
+    //       // The user is not signed in
+    //       console.log('User is not signed in');
+    //       // You can show the login and signup links.
+    //     }
+    //   }, []);
+
 
     return (
         <div>
@@ -35,10 +80,14 @@ export default function Home() {
                             </div>
 
                             <div className='md:invisible sm:visible '>
-                                <div className='flex items-center justify-center gap-2  px-2 '>
-                                    <div className='cursor-pointer  px-5 py-2  rounded-3xl bg-[#146c94] b_shadow translate-x-5'>Login</div>
-                                    <div className='bg-white text-black py-2 px-5 b_shadow rounded-r-3xl text-right'>Signup</div>
-                                </div>
+                                {
+                                    userData ? <Link href="/profile" >Welcome, {userData.name} </Link> :
+                                        <div className='flex items-center justify-center gap-2  px-2 '>
+                                            <Link href='/login' className='cursor-pointer  px-5 py-2  rounded-3xl bg-[#146c94] b_shadow translate-x-5'>Login</Link>
+                                            <Link href='/login' className='bg-white text-black py-2 px-5 b_shadow rounded-r-3xl text-right'>Signup</Link>
+                                        </div>
+                                }
+
                             </div>
 
                         </div>
@@ -80,17 +129,20 @@ export default function Home() {
                             <Image src={smalllogo} width={180} alt="abc" />
                         </center>
                     </div>
-                    {/* <div className="invisible md:visible grow">
-                        <div className='bg-white border rounded-3xl shadow-xl shadow-gray-600 align-right'>
-                            <button className='px-3 py-2 bg-[#146C94] text-white shrink-0 rounded-3xl font-medium'>Login</button>
-                            <button className='px-3 py-2 bg-white text-[#000] shrink-0 rounded-r-3xl font-medium'>Signup</button>
-                        </div>
-                    </div> */}
+
                     <div className='invisible md:visible '>
-                        <div className='flex items-center justify-center gap-2  px-2 '>
-                            <div className='cursor-pointer px-5 py-2  rounded-3xl bg-[#146c94] translate-x-5 b_shadow'>Login</div>
-                            <div className='bg-white text-black py-2 px-5 rounded-r-3xl text-right b_shadow'>Signup</div>
-                        </div>
+                        {
+                            userData ?
+                                <>
+                                    <Link href="/profile">Welcome, {userData.name} </Link>
+                                    <button onClick={() => signOut()} className='px-3 py-2 rounded border' >signOut</button>
+
+                                </> :
+                                <div className='flex items-center justify-center gap-2  px-2 '>
+                                    <Link href='/login' className='cursor-pointer  px-5 py-2  rounded-3xl bg-[#146c94] b_shadow translate-x-5'>Login</Link>
+                                    <Link href='/login' className='bg-white text-black py-2 px-5 b_shadow rounded-r-3xl text-right'>Signup</Link>
+                                </div>
+                        }
                     </div>
                 </div>
             </nav>
