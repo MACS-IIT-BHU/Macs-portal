@@ -9,10 +9,6 @@ import { useState } from 'react';
 
 const Articles = () => {
     const article_holder=data.filter((item)=>item.id<4);
-    // function read() {
-
-    //     console.log("events");
-    // }
     const [jsonData, setJsonData] = useState(data);
 
     return (
@@ -30,8 +26,8 @@ const Articles = () => {
             <div className=" mt-10 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0 lg:w-[50vw] md:w-[50vw] sm:w-[80%] flex flex-wrap pl-4 gap-x-6 gap-y-16 items-center justify-around ">
                 {article_holder.map((article,pos) =>(
                         <div className="w-[80%]  h-[214px] bg-[#D9D9D9] shadow-xl " key={pos}>
-                        <div className='w-[100%] pt-[3%] px-[3%] h-[154px] bg-[#F1F1F1]'>
-                            {  article.content.substr(0,231) + "... " }<a className='text-[#146C94] hover:underline hover:text-blue-600' href="/articles" >Read More</a></div>
+                        <div className='w-[100%] pt-[3%] px-[3%] h-[154px] text-justify bg-[#F1F1F1]'>
+                            {  article.content.substr(0,150) + "... " }<a className='text-[#146C94] hover:underline hover:text-blue-600' href="/articles" >Read More</a></div>
                         
                         <div className=' flex flex-row w-[100%]  h-[60px] bg-[#ffffff]'>
                             <div className='text-[#146C94] w-[70%] pt-[3%] pl-[3%] pb-[3%]'>{article.heading}</div>
