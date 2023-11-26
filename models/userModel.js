@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 const userSchema = new  mongoose.Schema({
-  username:{
-    type:String,
-    required:[true, "Please provide a username"],
-    unique:true,
-  },
+  // username:{
+  //   type:String,
+  //   required:[true, "Please provide a username"],
+  //   unique:true,
+  // },
 
   email:{
     type:String,
@@ -13,11 +13,13 @@ const userSchema = new  mongoose.Schema({
     unique:true,
   },
 
-  password:{
+  // password:{
+  //   type:String,
+  //   required:[true, "Please provide a password"],
+  // },
+  img:{
     type:String,
-    required:[true, "Please provide a password"],
   },
-
   isVerified:{
     type:Boolean,
     default:false,
