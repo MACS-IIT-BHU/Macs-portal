@@ -17,13 +17,13 @@ const Events = () => {
                     <br></br>
                     {article_holder2.map((article, pos) => (
 
-                        <div className="w-[60vw] m:w-[50vw] lg:w-[40vw] h-[179px] font-['Murecho'] font-bold text-white text-[22px]">{article.content.substr(0, 200) + "... "}</div>
+                        <div className="w-[60vw] m:w-[50vw] lg:w-[40vw] h-[179px] font-['Murecho'] font-bold text-white text-[22px]" key = {pos}>{article.content.substr(0, 200) + "... "}</div>
                     ))
                     }
                 </div>
                 <div className='invisible lg:visible w-[60vw] lg:w-[40vw] bg-white  ml-9 h-[500px] items-center  rounded-xl'>
                     {article_holder3.map((article, pos) => (
-                        <div className="flex ml-5 mt-12 w-[38vw] h-[160px] pt-3 rounded-xl bg-white drop-shadow-2xl">
+                        <div className="flex ml-5 mt-12 w-[38vw] h-[160px] pt-3 rounded-xl bg-white drop-shadow-2xl" key = {pos}>
                             <div className="font-['Murecho'] text-[22px] ml-2  w-[354px] h-[131px]">
                                 <h1 className='mb-2 mt-2 font-bold'>{article.heading}</h1>
                                 <p className='text-[20px]'>{article.content.substr(0, 110) + "..."}</p>
@@ -39,7 +39,9 @@ const Events = () => {
             <br></br><br></br>
             <div className="flex flex-wrap justify-center gap-16 mb-[100px] ">
                 {article_holder.map((article, pos) => (
-                    <Carde author={article.author} article={article.content.substr(0, 250) + "... "} />
+                    <div key = {pos}>
+                    <Carde author={article.author} article={article.content.substr(0, 250) + "... " } />
+                    </div>
                 ))
                 }
             </div>
