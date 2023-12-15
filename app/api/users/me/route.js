@@ -26,13 +26,30 @@ export async function GET(req) {
 }
 
 export async function POST(req, res) {
-  const aboutData = req.body.about;
-
-  console.log(aboutData);
-
   try {
-    return NextResponse.json({ message: "hello world" });
+    const reqBody = await req.json();
+    const { about, email } = reqBody;
+
+    // Find the user by email
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      // If user with the specified email is not found
+      return NextResponse.json({ message: "User not found" });
+    }
+
+    // Update the 'about' field of the user
+    user.about = about;
+
+    // Save the updated user
+    await user.save();
+
+    return NextResponse.json({
+      message: "User updated successfully",
+      data: user,
+    });
   } catch (err) {
+    console.error(err);
     return NextResponse.json({ message: "Internal server error" });
   }
 }

@@ -65,6 +65,7 @@ const ProfilePage = ({ params }) => {
   const handleSubmit = async () => {
     await axios.post("http://localhost:3000/api/users/me", {
       about: about,
+      email: email,
     });
   };
 
@@ -88,14 +89,14 @@ const ProfilePage = ({ params }) => {
       </button>
 
       {isOpen && (
-        <div className="absolute w-[400px] top-[30%] left-[40%] border rounded h-[400px]">
+        <div className="absolute w-[800px] top-[30%] left-[20%] border rounded h-[400px]">
           <div className="flex gap-4 flex-col m-4">
             <textarea
               onChange={handleDataChange}
               value={about}
               className="border px-2 py-1"
               placeholder="Enter about Yourself"
-              rows={5}
+              rows={8}
             ></textarea>
 
             <button
