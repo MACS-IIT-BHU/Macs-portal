@@ -32,12 +32,9 @@ const UserProfilePage = ({ params }) => {
 
   const handleFormSubmit = async (updatedUserData) => {
     try {
-      const res = await axios.post(
-        `http://localhost:3000/api/users/me?user=${params.id}`,
-        {
-          updatedUserData,
-        }
-      );
+      const res = await axios.post(`/api/users/me?user=${params.id}`, {
+        updatedUserData,
+      });
 
       setUser(res.data.data);
       setEditMode(false);

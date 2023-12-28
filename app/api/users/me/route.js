@@ -70,7 +70,7 @@ export async function POST(req, res) {
 
     (user.name = updatedUserData.name),
       (user.email = updatedUserData.email),
-      (user.yearOfGraduation = updatedUserData.yearOfJoining),
+      (user.yearOfJoining = updatedUserData.yearOfJoining),
       (user.github = updatedUserData.github),
       (user.linkedin = updatedUserData.linkedin),
       (user.skills = updatedUserData.skills),
