@@ -6,6 +6,9 @@ const userSchema = new mongoose.Schema({
     required: [true, "Please provide a Email Address"],
     unique: true,
   },
+  name: {
+    type: String,
+  },
   img: {
     type: String,
   },
@@ -16,7 +19,15 @@ const userSchema = new mongoose.Schema({
 
   about: {
     type: String,
-    default: "",
+  },
+  github: {
+    type: String,
+  },
+  linkedin: {
+    type: String,
+  },
+  skills: {
+    type: String,
   },
 });
 

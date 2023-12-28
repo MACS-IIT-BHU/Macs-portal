@@ -7,8 +7,11 @@ import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 
+
 const ProfilePage = ({ params }) => {
   const router = useRouter();
+
+  const codedToken = localStorage.getItem("token");
 
   function replacePercentageWithAt(inputString) {
     // Using a regular expression to replace all occurrences of '%'
@@ -19,10 +22,12 @@ const ProfilePage = ({ params }) => {
   // console.log(params.id);
 
   const email = replacePercentageWithAt(params.id);
+  console.log(email);
 
   // console.log(email);
 
   const { data: session } = useSession();
+  console.log(session);
 
   const [userData, setUserData] = useState();
 
@@ -66,12 +71,9 @@ const ProfilePage = ({ params }) => {
     await axios.post("http://localhost:3000/api/users/me", {
       about: about,
       email: email,
+      token: codedToken,
     });
   };
-
-  useEffect(() => {
-    console.log(about);
-  }, [about]);
 
   return (
     <div className="h-[80vh] pt-20 relative">
@@ -81,12 +83,14 @@ const ProfilePage = ({ params }) => {
       <div>{userData && userData.email}</div>
       {userData && <Image src={userData.image} width={100} height={100} />}
 
-      <button
-        onClick={() => setIsOpen(true)}
-        className="px-4 py-2 rounded border m-12 w-[100px] text-center"
-      >
-        Edit
-      </button>
+      {session && session.user.email == email && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="px-4 py-2 rounded border m-12 w-[100px] text-center"
+        >
+          Edit
+        </button>
+      )}
 
       {isOpen && (
         <div className="absolute w-[800px] top-[30%] left-[20%] border rounded h-[400px]">

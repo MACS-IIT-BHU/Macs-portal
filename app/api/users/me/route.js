@@ -1,26 +1,47 @@
 import { getDataFromToken } from "@/helpers/getDataFromToken";
-
 import { getProviders } from "next-auth/react";
-
 import { NextRequest, NextResponse } from "next/server";
+import jwt from "jsonwebtoken";
 import User from "@/models/userModel";
 import { connect } from "@/dbConfig/dbConfig";
 
 connect();
 
-export async function GET(req) {
+export async function GET(req, res) {
   try {
-    const response = await User.find({});
+    const url = new URL(req.url);
+    const searchParams = new URLSearchParams(url.search);
+    const user = searchParams.get("user");
+    // const { user } = req.query || {};
+    console.log(user);
 
-    if (response) {
-      return NextResponse.json({
-        message: "Users found",
-        data: response,
-      });
+    if (user) {
+      // If user parameter is provided, fetch a specific user
+      const response = await User.findById(user);
+
+      if (response) {
+        return NextResponse.json({
+          message: "User found",
+          data: response,
+        });
+      } else {
+        return NextResponse.json({ message: "User not found" });
+      }
     } else {
-      return NextResponse.json({ message: "No Email Found" });
+      // If no user parameter is provided, fetch all users
+      const response = await User.find({});
+
+      if (response && response.length > 0) {
+        return NextResponse.json({
+          message: "Users found",
+          data: response,
+        });
+      } else {
+        return NextResponse.json({ message: "No users found" });
+      }
     }
   } catch (err) {
+    console.error(err);
     return NextResponse.json({ message: "Internal server error" });
   }
 }
@@ -28,21 +49,34 @@ export async function GET(req) {
 export async function POST(req, res) {
   try {
     const reqBody = await req.json();
-    const { about, email } = reqBody;
+    console.log(reqBody);
 
-    // Find the user by email
-    const user = await User.findOne({ email });
+    const updatedUserData = reqBody.updatedUserData;
+
+    const url = new URL(req.url);
+    const searchParams = new URLSearchParams(url.search);
+    const userId = searchParams.get("user");
+    console.log(userId, "given user id");
+
+    if (!userId) {
+      return NextResponse.json({ message: "Invalid request" });
+    }
+    const user = await User.findById(userId);
 
     if (!user) {
-      // If user with the specified email is not found
+      // If user with the specified ID is not found
       return NextResponse.json({ message: "User not found" });
     }
 
-    // Update the 'about' field of the user
-    user.about = about;
-
-    // Save the updated user
-    await user.save();
+    (user.name = updatedUserData.name),
+      (user.email = updatedUserData.email),
+      (user.yearOfGraduation = updatedUserData.yearOfJoining),
+      (user.github = updatedUserData.github),
+      (user.linkedin = updatedUserData.linkedin),
+      (user.skills = updatedUserData.skills),
+      (user.about = updatedUserData.about),
+      // Save the updated user
+      await user.save();
 
     return NextResponse.json({
       message: "User updated successfully",
@@ -53,25 +87,3 @@ export async function POST(req, res) {
     return NextResponse.json({ message: "Internal server error" });
   }
 }
-
-// export async function GET(req, res) {
-//   try {
-//     const { email } = req.query;
-
-//     console.log(email);
-
-//     const user = await User.find({ email: email });
-
-//     return NextResponse.json({
-//       message: "User found",
-//       data: user,
-//     });
-//   } catch (err) {
-//     return NextResponse.json(
-//       { error: err.message },
-//       {
-//         status: 500,
-//       }
-//     );
-//   }
-// }

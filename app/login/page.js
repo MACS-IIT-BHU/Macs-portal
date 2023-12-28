@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import jwt from "jsonwebtoken";
 
 import { useSession, signIn, signOut } from "next-auth/react";
 
@@ -15,10 +16,16 @@ const Login = () => {
 
   console.log(session);
 
+  const secret = process.env.TOKEN_SECRET;
+  console.log(secret);
+
   useEffect(() => {
     if (session) {
       setUserData(session.user);
-      router.push(`/profile/${session.user.email}`);
+      const token = jwt.sign({ email: session.email }, secret || "macssecret");
+      console.log(token);
+      localStorage.setItem("token", JSON.stringify(token));
+      router.push(`/students`);
     }
   }, [session]);
 
@@ -54,6 +61,11 @@ const Login = () => {
     }
   };
 
+  const handleLoginClick = async () => {
+    const res = signIn("google");
+    console.log(res);
+  };
+
   useEffect(() => {
     if (user.email.length > 0 && user.password.length > 0) {
       setButtonDisabled(false);
@@ -64,10 +76,7 @@ const Login = () => {
 
   return (
     <div className="h-[80vh] flex items-center justify-center flex-col gap-4">
-      <button
-        onClick={() => signIn("google")}
-        className="px-3 py-2 rounded border"
-      >
+      <button onClick={handleLoginClick} className="px-3 py-2 rounded border">
         Login/Signup with Google
       </button>
       <button onClick={() => signOut()} className="px-3 py-2 rounded border">

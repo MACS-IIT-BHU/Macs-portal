@@ -1,16 +1,19 @@
+// next.config.js
+// require("dotenv").config();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-    images: {
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname: "*.googleusercontent.com",
-                port: "",
-                pathname: "**",
-            },
-        ],
-    },
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.googleusercontent.com",
+        port: "",
+        pathname: "**",
+      },
+    ],
+  },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;
