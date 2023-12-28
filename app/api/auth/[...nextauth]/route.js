@@ -20,6 +20,13 @@ const handler = NextAuth({
 
       try {
         await connect();
+        console.log(profile.email);
+        // Check if the email is of the desired format
+        const emailPattern = /^[a-zA-Z]+\.[a-zA-Z]+\.mat\d{2}@itbhu\.ac\.in$/;
+        if (!emailPattern.test(profile.email)) {
+          // If the email doesn't match the desired pattern, return false
+          return false;
+        }
 
         const doesUserExist = await User.findOne({ email: profile.email });
 
