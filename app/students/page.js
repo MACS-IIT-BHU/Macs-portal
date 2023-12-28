@@ -27,7 +27,7 @@ const Students = () => {
   };
 
   return (
-    <div className="bg-lightBlue-100 p-4">
+    <div className="bg-lightBlue-100 p-4 min-h-[80vh]">
       <h1 className="text-3xl font-bold mb-4 text-lightBlue-800">Students</h1>
       {students &&
         students.map((student) => (

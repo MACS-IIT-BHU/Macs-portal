@@ -24,6 +24,7 @@ const handler = NextAuth({
         // Check if the email is of the desired format
         const emailPattern = /^[a-zA-Z]+\.[a-zA-Z]+\.mat\d{2}@itbhu\.ac\.in$/;
         if (!emailPattern.test(profile.email)) {
+          console.log("Whayt the fuck");
           // If the email doesn't match the desired pattern, return false
           return false;
         }
