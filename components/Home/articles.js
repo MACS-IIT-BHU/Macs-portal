@@ -3,6 +3,7 @@ import { getDisplayName } from 'next/dist/shared/lib/utils';
 import React, { Fragment } from 'react'
 import data from '../../public/data_articles.json'
 import { useState } from 'react';
+import { salsa } from '@/helpers/font';
 
 //import a from "@/public/home/a.jpg"
 // import Readmore from "./readmore.js"//border-solid border-2 border-indigo-600
@@ -13,7 +14,7 @@ const Articles = () => {
 
     return (
         < Fragment >
-        <div className="font-['Montserrat'] flex py-24 px-[10vw] min-h-screen md:divide-x divide-gray-400 lg:divide-x xl:divide-x 2xl:divide-x flex-col xl:flex-row 2xl:flex-row lg:flex-row md:flex-row sm:flex-col content-center">
+        <div className={`${salsa.className} font-['Montserrat'] flex py-24 px-[10vw] min-h-screen md:divide-x divide-gray-400 lg:divide-x xl:divide-x 2xl:divide-x flex-col xl:flex-row 2xl:flex-row lg:flex-row md:flex-row sm:flex-col content-center`}>
             <div className="lg:w-[30vw] md:w-[30vw] sm:w-[80%] flex flex-col pr-4 gap-8 mr-10 ">
                 <div className="flex flex-col gap-6 items-center">
                     <h3 className="text-[#146C94] font-medium text-3xl ">Articles</h3>

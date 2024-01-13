@@ -3,9 +3,8 @@ import './globals.css'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Script from 'next/script'
-import { Inter } from 'next/font/google'
-const inter = Inter({ subsets: ['latin'] })
 import Provider from '@/components/Provider'
+import { inter } from '@/helpers/font'
 
 export default function RootLayout({ children }) {
   return (

@@ -51,7 +51,9 @@ function Member({ name, position, image }) {
       </div>
       <div className="flex flex-col text-xl ">
         <span className="text-[24px] md:text-2xl text-center">{name}</span>
-        <span className="text-md md:text-xl text-center text-gray-500">{position}</span>
+        <span className="text-md md:text-xl text-center text-gray-500">
+          {position}
+        </span>
       </div>
     </div>
   );
