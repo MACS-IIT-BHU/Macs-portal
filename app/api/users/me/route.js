@@ -75,8 +75,9 @@ export async function POST(req, res) {
       (user.linkedin = updatedUserData.linkedin),
       (user.skills = updatedUserData.skills),
       (user.about = updatedUserData.about),
-      // Save the updated user
-      await user.save();
+      (user.resume = updatedUserData.resume);
+    // Save the updated user
+    await user.save();
 
     return NextResponse.json({
       message: "User updated successfully",

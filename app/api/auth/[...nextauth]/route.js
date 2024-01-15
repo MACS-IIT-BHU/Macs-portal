@@ -24,7 +24,9 @@ const handler = NextAuth({
         // Check if the email is of the desired format
         const emailPattern = /^[a-zA-Z]+\.[a-zA-Z]+\.mat\d{2}@itbhu\.ac\.in$/;
         if (!emailPattern.test(profile.email)) {
-          console.log("Whayt the fuck");
+          console.log(
+            "What the fuck bro, you are not suppossed to login here!"
+          );
           // If the email doesn't match the desired pattern, return false
           return false;
         }
@@ -41,6 +43,7 @@ const handler = NextAuth({
             github: "https://github.com/anurag0006",
             linkedin: "https://www.linkedin.com/in/anurag-kamboj/",
             skills: "Nextjs, Reactjs, Nodejs, MongoDB, Graphql, FastApis",
+            resume: "",
           });
         }
         return true;
