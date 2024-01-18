@@ -62,6 +62,8 @@ const Login = () => {
   };
 
   const handleLoginClick = async () => {
+    console.log(process.env);
+    console.log("HEllo world!");
     const res = signIn("google");
     console.log(res);
   };
