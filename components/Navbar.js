@@ -37,7 +37,7 @@ export default function Home() {
       setUserData(session.user);
     }
   }, [session]);
-
+  console.log(path);
   // useEffect(() => {
   //     const token = Cookies.get('token'); // Replace 'token' with the name of your authentication cookie
 
@@ -59,7 +59,7 @@ export default function Home() {
         className={`w-full navbar-hero md:pb-2 bg-gradient-to-r to-cyan-300 from-cyan-600 fixed z-20 ${murecho.className}`}
       >
         <div
-          className={`relative mx-4  px-4 md:items-center md:flex md:justify-between ${
+          className={`relative mx-4  px-4 md:flex md:justify-between ${
             navbar ? "" : "h-16"
           }`}
         >
@@ -78,11 +78,11 @@ export default function Home() {
                 </button>
               </div>
 
-              <div className="md:invisible sm:visible ">
+              <div className="md:invisible sm:visible py-5">
                 {userData ? (
                   <Link href="/profile">Welcome, {userData.name} </Link>
                 ) : (
-                  <div className="flex items-center justify-center gap-2  px-2 ">
+                  <div className="flex items-center justify-center gap-2 px-2">
                     <Link
                       href="/login"
                       className="cursor-pointer  px-5 py-2  rounded-3xl bg-[#146c94] b_shadow translate-x-5"
@@ -121,66 +121,74 @@ export default function Home() {
                     Home
                   </Link>
                 </li>
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                    path == "/announcements" ? "bg-white" : ""
-                  }`}
-                >
-                  <Link
+
+                <Link
                     href="/announcements"
                     className="font-medium  text-black/75 hover:text-black/100 my-8"
                   >
-                    Events
-                  </Link>
-                </li>
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                    path == "" ? "bg-white" : ""
-                  }`}
-                >
-                  <Link
+                  <li
+                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${
+                      path == "/announcements" ? "bg-white" : ""
+                    }`}
+                  >
+
+                      Events
+                  </li>
+                </Link>
+                <Link
                     href="/articles"
                     className="font-medium  text-black/75 hover:text-black/100 my-8"
                   >
-                    Articles
-                  </Link>
-                </li>
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                    path == "/gallery" ? "bg-white" : ""
-                  }`}
-                >
-                  <Link
+                  <li
+                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${
+                      path == "/articles" ? "bg-white" : ""
+                    }`}
+                  >
+                      Articles
+                  </li>
+                </Link>
+                
+                <Link
                     href="/gallery"
                     className="font-medium  text-black/75 hover:text-black/100 my-8"
                   >
+                  <li
+                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${
+                    path == "/gallery" ? "bg-white" : ""
+                    }`}
+                  >
+                  
                     Gallery
-                  </Link>
-                </li>
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                    path == "/team" ? "bg-white" : ""
-                  }`}
-                >
-                  <Link
+                  </li>
+                </Link>
+
+                <Link
                     href="/teams"
                     className="font-medium  text-black/75 hover:text-black/100 my-8"
                   >
-                    Team
-                  </Link>
-                </li>
+
                 <li
                   className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                    path == "/team" ? "bg-white" : ""
+                    path == "/teams" ? "bg-white" : ""
                   }`}
                 >
-                  <Link
+                    Team
+                </li>
+                </Link>
+                <Link
                     href="/students"
                     className="font-medium  text-black/75 hover:text-black/100 my-8"
                   >
+
+                <li
+                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${
+                    path == "/students" ? "bg-white" : ""
+                  }`}
+                >
                     Students
-                  </Link>
                 </li>
+                </Link>
+
               </ul>
             </div>
           </div>
