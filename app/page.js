@@ -12,7 +12,7 @@ export default function Home() {
   console.log(session);
 
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen">
+    <main className="flex flex-col items-center justify-between min-h-screen overflow-hidden">
       <Hero />
       <Articles />
       <Alums />
