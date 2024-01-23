@@ -59,9 +59,8 @@ export default function Home() {
         className={`w-full navbar-hero md:pb-2 bg-gradient-to-r to-cyan-300 from-cyan-600 fixed z-20 ${murecho.className}`}
       >
         <div
-          className={`relative mx-4  px-4 md:flex md:justify-between ${
-            navbar ? "" : "h-16"
-          }`}
+          className={`relative mx-4  px-4 md:flex md:justify-between ${navbar ? "" : "h-16"
+            }`}
         >
           <div className="md:hidden justify-self-start grow">
             <div className="flex items-center justify-between pt-2 md:py-5 md:block">
@@ -102,17 +101,16 @@ export default function Home() {
           </div>
           <div className="justify-self-start">
             <div
-              className={`pb-3 md:block md:pb-0 md:mt-0 md:px-0 ${
-                navbar ? "block" : "hidden"
-              }`}
+              className={`pb-3 md:block md:pb-0 md:mt-0 md:px-0 ${navbar ? "block" : "hidden"
+                }`}
             >
               <ul
-                className={`flex flex-col p-4 md:pb-2 md:pt-0 mt-4 border rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0 md:space-y-0 space-y-4 ${montserrat.className}`}
+                className={`flex flex-col p-4 md:pb-2 md:pt-0 mt-4  rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0 md:space-y-0 space-y-4 ${montserrat.className}`}
               >
                 <li
-                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                    path == "/" ? "bg-white" : ""
-                  }`}
+                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/" ? "bg-white" : ""
+                    }`}
+                  onClick={() => setNavbar(false)}
                 >
                   <Link
                     href="/"
@@ -123,70 +121,75 @@ export default function Home() {
                 </li>
 
                 <Link
-                    href="/announcements"
-                    className="font-medium  text-black/75 hover:text-black/100 my-8"
-                  >
+                  href="/announcements"
+                  className="font-medium  text-black/75 hover:text-black/100 my-8"
+                >
                   <li
-                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                      path == "/announcements" ? "bg-white" : ""
-                    }`}
+                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/announcements" ? "bg-white" : ""
+                      }`}
+                    onClick={() => setNavbar(false)}
+
                   >
 
-                      Events
+                    Events
                   </li>
                 </Link>
                 <Link
-                    href="/articles"
-                    className="font-medium  text-black/75 hover:text-black/100 my-8"
-                  >
+                  href="/articles"
+                  className="font-medium  text-black/75 hover:text-black/100 my-8"
+                >
                   <li
-                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                      path == "/articles" ? "bg-white" : ""
-                    }`}
+                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/articles" ? "bg-white" : ""
+                      }`}
+                    onClick={() => setNavbar(false)}
+
                   >
-                      Articles
+                    Articles
                   </li>
                 </Link>
-                
+
                 <Link
-                    href="/gallery"
-                    className="font-medium  text-black/75 hover:text-black/100 my-8"
-                  >
+                  href="/gallery"
+                  className="font-medium  text-black/75 hover:text-black/100 my-8"
+                >
                   <li
-                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                    path == "/gallery" ? "bg-white" : ""
-                    }`}
+                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/gallery" ? "bg-white" : ""
+                      }`}
+                    onClick={() => setNavbar(false)}
+
                   >
-                  
+
                     Gallery
                   </li>
                 </Link>
 
                 <Link
-                    href="/teams"
-                    className="font-medium  text-black/75 hover:text-black/100 my-8"
-                  >
-
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                    path == "/teams" ? "bg-white" : ""
-                  }`}
+                  href="/teams"
+                  className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
+
+                  <li
+                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/teams" ? "bg-white" : ""
+                      }`}
+                    onClick={() => setNavbar(false)}
+
+                  >
                     Team
-                </li>
+                  </li>
                 </Link>
                 <Link
-                    href="/students"
-                    className="font-medium  text-black/75 hover:text-black/100 my-8"
-                  >
-
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${
-                    path == "/students" ? "bg-white" : ""
-                  }`}
+                  href="/students"
+                  className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
+
+                  <li
+                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/students" ? "bg-white" : ""
+                      }`}
+                    onClick={() => setNavbar(false)}
+
+                  >
                     Students
-                </li>
+                  </li>
                 </Link>
 
               </ul>

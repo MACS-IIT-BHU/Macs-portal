@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 
 function Student({ key, event, student }) {
-  console.log(student);
+  // console.log(student);
   return (
     <div
       key={key}
@@ -32,7 +32,7 @@ function Student({ key, event, student }) {
         </Link>
       </div>
       <h2
-        className="outline-none p-2 mt-3 rounded-md bg-gray-400/80 active:bg-gray-300 text-white cursor-pointer"
+        className="outline-none p-2 mt-3 rounded-md bg-green-800/80 active:bg-gray-300 text-white cursor-pointer"
         onClick={() => event(student)}
       >
         show profile
