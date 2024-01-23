@@ -1,17 +1,14 @@
 'use client'
 import React from "react";
 import classes from './imageSlider.module.css';
+import Image from 'next/image'
 
-import a1 from "@/public/home/a.jpg"
 // this section contains all the refs to images to be displayes in alums sections
-import i1 from "@/public/home/image1.jpg"
 import i2 from "@/public/home/image2.jpg"
-import i3 from "@/public/home/image3.webp"
 //  import i4 from "@/public/home/i"              /*please put the correct image format with name*/
 //  import i5 from "@/public/home/"
 // this section contains all the refs to images to be displayes in alums sections
-import Image from 'next/image'
-
+ 
 
 // let image_url_container=[i2,i2,i2,i2,i2]
 function ImageSlider() {
