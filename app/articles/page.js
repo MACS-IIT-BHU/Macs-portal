@@ -8,10 +8,9 @@ const Events = () => {
     const article_holder3 = data.filter((item) => item.id <= 2);
     const [jsonData, setJsonData] = useState(data);
     return (
-        <div className='min-h-screen text-slate-950'>
-            <br></br><br></br>
-            <div className="w-[100vw] h-[600px] bg-gradient-to-r to-cyan-300 from-cyan-600  text-6xl flex flex-wrap justify-center py-12">
-                <div className='w-[45vw] mr-9'>
+        <div className='min-h-screen text-slate-950 pt-4'>
+            <div className="w-[100vw] h-[600px] bg-gradient-to-r to-cyan-300 from-cyan-600  text-6xl flex flex-wrap justify-center py-12 mt-6">
+                <div className=''>
 
                     <div className='w-[60vw] m:w-[50vw] lg:w-[40vw]  h-[285px] bg-[#D9D9D9] rounded-xl'></div>
                     <br></br>
@@ -34,13 +33,13 @@ const Events = () => {
                     }
                 </div>
             </div>
-            <br></br>
-            <div className="font-['Murecho'] text-[22px] font-bold px-24">Sort By &#11167;</div>
+            {/* <br></br> */}
+            {/* <div className="font-['Murecho'] text-[22px] font-bold px-24">Sort By &#11167;</div> */}
             <br></br><br></br>
             <div className="flex flex-wrap justify-center gap-16 mb-[100px] ">
                 {article_holder.map((article, pos) => (
                     <div key = {pos}>
-                    <Carde author={article.author} article={article.content.substr(0, 250) + "... " } />
+                    <Carde author={article.author} article={article.content.substr(0,100) + "... " } />
                     </div>
                 ))
                 }
