@@ -8,7 +8,7 @@ import { inter } from '@/helpers/font'
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className='w-fit'>
       <head>
         <Script src="https://accounts.google.com/gsi/client" />
       </head>
