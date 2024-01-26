@@ -99,16 +99,22 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="justify-self-start">
+
+          {/*Ending div for navbar navigators in mobile view */}
+          {/*First div */}
+          <div className=" md:min-w-[40vw]">
+
             <div
-              className={`pb-3 md:block md:pb-0 md:mt-0 md:px-0 ${navbar ? "block" : "hidden"
+              className={`pb-3 md:block  md:pb-0 md:mt-0 md:px-0 ${navbar ? "block" : "hidden"
                 }`}
             >
               <ul
                 className={`flex flex-col p-4 md:pb-2 md:pt-0 mt-4  rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0 md:space-y-0 space-y-4 ${montserrat.className}`}
               >
                 <li
-                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/" ? "bg-white" : ""
+
+                  className={`px-2 py-3 hover:bg-white  rounded-lg ${path == "/" ? "bg-white " : ""
+
                     }`}
                   onClick={() => setNavbar(false)}
                 >
@@ -182,20 +188,25 @@ export default function Home() {
                   className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
 
-                  <li
-                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/students" ? "bg-white" : ""
+
+                  {/* <li
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/students" ? "bg-white" : ""
+
                       }`}
                     onClick={() => setNavbar(false)}
 
                   >
                     Students
-                  </li>
+                  </li> */}
                 </Link>
 
               </ul>
             </div>
           </div>
-          <div className="absolute   invisible md:visible top-0 left-[50%] -translate-x-[50%] translate-y-[5%]">
+
+          {/*2nd number div for image container */}
+          <div className={`md:w-[20vw] md:hidden xl:block ${navbar || window.innerWidth>500?"visible":"invisible"}`}>
+
             <center>
               <Image src={smalllogo} width={180} alt="abc" />
             </center>
