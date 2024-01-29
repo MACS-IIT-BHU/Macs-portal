@@ -8,7 +8,7 @@ import  ImgSlider from "./imgslider.js";
 import { Bitter, Monomaniac_One, Montserrat, Nanum_Brush_Script } from 'next/font/google';
 const montserrat = Montserrat({ subsets: ['latin'] });
 
-function page() {
+function Page() {
 
     //declaring states
     const [show,setShow] = useState(false);
@@ -69,4 +69,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
