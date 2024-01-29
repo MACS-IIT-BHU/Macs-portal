@@ -32,6 +32,15 @@
   background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(89, 89, 89, 0.756827731092437) 74%, rgba(255, 255, 255, 0) 100%);
 }
 
+/* .scroll-modal{
+  ::-webkit-scrollbar{
+    
+  }
+} */
+.scroll-modal {
+  scrollbar-width: thin;
+}
+
 
 @media screen and (max-width: 780px) {
   .member_background {
