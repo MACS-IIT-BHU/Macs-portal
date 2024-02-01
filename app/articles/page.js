@@ -36,7 +36,7 @@ const Events = () => {
 
             <div className='search-area flex justify-start items-center md:justify-start pt-6 w-[90%]'>
                 <input placeholder='Search Articles' className='rounded-l-xl px-3 py-1 border-2 border-r-0 outline-none'></input>
-                <p className='rounded-r-xl bg-gray-500 items-center flex px-2 text-gray-300 hover:bg-black h-[35px] w-[70px]' style={{transition:'linear 0.1s'}}
+                <p className='rounded-r-xl bg-gray-500 items-center justify-center flex px-2 text-gray-300 hover:bg-black h-[35px] w-[70px]' style={{transition:'linear 0.1s'}}
                  onClick={(event)=>{
                     const element = event.target;
                     const currentSize = window.getComputedStyle(element, null).getPropertyValue('font-size');
