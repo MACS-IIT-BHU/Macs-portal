@@ -91,21 +91,6 @@ const Footer = () => {
           <div className="text-white">&nbsp; MACS 2023</div>
         </div>
       </div>
-
-      <div
-        className="text-white text-center"
-        style={{ marginTop: "10px", fontStyle: "italic" }}
-      >
-        Made with love by{" "}
-        <a
-          href="http://kamboj.me"
-          target="_blank"
-          style={{ color: "inherit", textDecoration: "none" }}
-        >
-          Anurag Kamboj
-        </a>{" "}
-        and Team <span style={{ color: "red", marginLeft: "5px" }}>❤️</span>
-      </div>
     </div>
   );
 };
