@@ -2,7 +2,7 @@ import React from 'react';
 
 const Modal = (props) => {
     return (
-        <div className='justify-center' style={{transition:'all 1s linear'}}>
+        <div className='justify-center'>
         <div className='h-full w-full fixed top-0 opacity-95 modal-backdrop bg-gray-500 z-10' onClick={props.onBgTouch}></div>
         <div className='scroll-modal h-3/4 w-3/4 bg-white opacity-100 z-50 fixed top-[15%] left-[13%] rounded-xl flex flex-col justify-center overflow-y-scroll items-center shadow-2xl'>
 
