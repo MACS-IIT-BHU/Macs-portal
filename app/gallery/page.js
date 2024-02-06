@@ -14,6 +14,7 @@ function Page() {
     const [show,setShow] = useState(false);
     const [idxx,setidxx] = useState(0);
     const [imgidx,setimgidx] = useState(0);
+    const [issort,setSort] = useState(false);
 
     //previous button
     const setprevIndex = (e)=>{
@@ -23,7 +24,13 @@ function Page() {
         if(a==0) setimgidx(images1[idxx].length -1);
         else setimgidx(a-1);
     }
-
+    function sort(){
+        const sortedImageData = images1.sort((a, b) => new Date(b[0].date) - new Date(a[0].date));
+    }
+    const sorted=()=>{
+        setSort(true);
+        sort();
+    }
     //next button
     const setnextIndex = (e)=>{
         setShow(true);
@@ -41,8 +48,8 @@ function Page() {
                     </div>
                     <div className="flex justify-center py-[50px] bg-[#e8f1f5] bg-[url('https://www.transparenttextures.com/patterns/absurdity.png')] ">
 
-                        <span className='w-[120px] h-[50px] bg-[#146C94] shadow-lg text-white flex items-center justify-center'>Sort By :</span>
-                        <span className='w-[120px] h-[50px] text-black shadow-lg  flex items-center justify-center'>Date Added &nbsp;⇅</span>
+                        <span className='w-[120px] h-[50px] bg-[#146C94] shadow-lg text-white flex items-center justify-center ' >Sort By :</span>
+                        <span className='w-[120px] h-[50px] text-black shadow-lg  flex items-center justify-center cursor-pointer' onClick={()=>sorted()}>Date Added &nbsp;⇅</span>
 
                     </div>
                     <div className="flex items-center justify-center w-[100vw] pb-[100px] pt-[50px] bg-[#e8f1f5] bg-[url('https://www.transparenttextures.com/patterns/absurdity.png')] ">
