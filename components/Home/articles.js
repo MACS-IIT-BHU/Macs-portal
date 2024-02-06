@@ -4,7 +4,8 @@ import React, { Fragment } from 'react'
 import data from '../../public/data_articles.json'
 import { useState } from 'react';
 import { salsa } from '@/helpers/font';
-
+import Link from 'next/link';
+import { FaArrowCircleRight } from "react-icons/fa";
 //import a from "@/public/home/a.jpg"
 // import Readmore from "./readmore.js"//border-solid border-2 border-indigo-600
 
@@ -43,10 +44,10 @@ const Articles = () => {
 
                     <div className=" text-center bg-[rgb(255,255,255)] cursor-pointer rounded-lg " >
 
-                        <div>
-                            <a href="/articles"> <button className='text-[#146C94] hover:underline pt-2 pb-2  w-[200px] h-[auto]  ' id='abcdef'>Click here for Articles &nbsp;</button>
-                                <button type="button" className="text-white bg-[#146C94] focus:ring-2 font-black rounded-full px-2 text-center mr-0 mb-0">&gt;</button></a>
-                        </div>
+                    <div className=" text-center md:min-w-[3vw] min-w-[45vw] p-1 px-2 font-semibold bg-[rgb(255,255,255)] cursor-pointer rounded-lg " >
+                        <Link className='text-cyan-600 flex justify-evenly items-center' href={`/articles`} >Click here for Articles <FaArrowCircleRight className='text-cyan-600 md:ml-3 scale-190 rounded-full '/></Link>
+
+                    </div>
                     </div>
                 </div>
 

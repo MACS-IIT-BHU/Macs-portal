@@ -54,16 +54,17 @@ export default function Home() {
   //   }, []);
 
   return (
-    <div>
+    <>
       <nav
         className={`w-full navbar-hero md:pb-2 bg-gradient-to-r to-cyan-300 from-cyan-600 fixed z-20 ${murecho.className}`}
       >
         <div
-          className={`relative mx-4  px-4 md:flex md:justify-between ${navbar ? "" : "h-16"
+          className={`relative mx-4  px-4 md:flex md:justify-between item-center py-3 ${navbar ? "" : "h-16"
             }`}
         >
+            {/*Starting div for navbar navigators in mobile view */}
           <div className="md:hidden justify-self-start grow">
-            <div className="flex items-center justify-between pt-2 md:py-5 md:block">
+            <div className="flex w-[90vw] items-center justify-between  md:py-5 md:block">
               <div>
                 <button
                   className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -77,12 +78,12 @@ export default function Home() {
                 </button>
               </div>
 
-              <div className="md:invisible sm:visible py-5">
+              <div className="md:invisible sm:visible ">
                 {userData ? (
                   <Link href="/profile">Welcome, {userData.name} </Link>
                 ) : (
-                  <div className="flex items-center justify-center gap-2 px-2">
-                    <Link
+                  <div className="flex items-center justify-end  gap-2 px-2 ">
+                    {/* <Link
                       href="/login"
                       className="cursor-pointer  px-5 py-2  rounded-3xl bg-[#146c94] b_shadow translate-x-5"
                     >
@@ -93,22 +94,26 @@ export default function Home() {
                       className="bg-white text-black py-2 px-5 b_shadow rounded-r-3xl text-right"
                     >
                       Signup
-                    </Link>
+                    </Link> */}
+                    <Link className="text-white font-semibold bg-[#146C94] py-1 px-4 border-2 border-cyan-800 rounded-3xl" href="/">Join Us</Link>
+
                   </div>
                 )}
               </div>
             </div>
           </div>
-          <div className="justify-self-start">
+          {/*Ending div for navbar navigators in mobile view */}
+          {/*First div */}
+          <div className=" md:min-w-[40vw]">
             <div
-              className={`pb-3 md:block md:pb-0 md:mt-0 md:px-0 ${navbar ? "block" : "hidden"
+              className={`pb-3 md:block  md:pb-0 md:mt-0 md:px-0 ${navbar ? "block" : "hidden"
                 }`}
             >
               <ul
                 className={`flex flex-col p-4 md:pb-2 md:pt-0 mt-4  rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0 md:space-y-0 space-y-4 ${montserrat.className}`}
               >
                 <li
-                  className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/" ? "bg-white" : ""
+                  className={`px-2 py-3 hover:bg-white  rounded-lg ${path == "/" ? "bg-white " : ""
                     }`}
                   onClick={() => setNavbar(false)}
                 >
@@ -125,7 +130,7 @@ export default function Home() {
                   className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
                   <li
-                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/announcements" ? "bg-white" : ""
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/announcements" ? "bg-white" : ""
                       }`}
                     onClick={() => setNavbar(false)}
 
@@ -139,7 +144,7 @@ export default function Home() {
                   className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
                   <li
-                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/articles" ? "bg-white" : ""
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/articles" ? "bg-white" : ""
                       }`}
                     onClick={() => setNavbar(false)}
 
@@ -153,7 +158,7 @@ export default function Home() {
                   className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
                   <li
-                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/gallery" ? "bg-white" : ""
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/gallery" ? "bg-white" : ""
                       }`}
                     onClick={() => setNavbar(false)}
 
@@ -169,7 +174,7 @@ export default function Home() {
                 >
 
                   <li
-                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/teams" ? "bg-white" : ""
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/teams" ? "bg-white" : ""
                       }`}
                     onClick={() => setNavbar(false)}
 
@@ -183,7 +188,7 @@ export default function Home() {
                 >
 
                   <li
-                    className={`px-2 py-3 hover:bg-white rounded-b-lg ${path == "/students" ? "bg-white" : ""
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/students" ? "bg-white" : ""
                       }`}
                     onClick={() => setNavbar(false)}
 
@@ -195,12 +200,13 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="absolute   invisible md:visible top-0 left-[50%] -translate-x-[50%] translate-y-[5%]">
+          {/*2nd number div for image container */}
+          <div className={`md:w-[20vw] md:hidden xl:block ${navbar || window.innerWidth>500?"visible":"invisible"}`}>
             <center>
               <Image src={smalllogo} width={180} alt="abc" />
             </center>
           </div>
-
+          {/*Last div for user Details or signin options */}
           <div className="invisible md:visible ">
             {userData ? (
               <>
@@ -213,8 +219,8 @@ export default function Home() {
                 </button>
               </>
             ) : (
-              <div className="flex items-center justify-center gap-2  px-2 ">
-                <Link
+              <div className="flex items-center justify-end gap-2  px-2  md:w-[40vw]">
+                {/* <Link
                   href="/login"
                   className="cursor-pointer  px-5 py-2  rounded-3xl bg-[#146c94] b_shadow translate-x-5"
                 >
@@ -225,12 +231,13 @@ export default function Home() {
                   className="bg-white text-black py-2 px-5 b_shadow rounded-r-3xl text-right"
                 >
                   Signup
-                </Link>
+                </Link> */}
+                <Link className="text-white font-semibold bg-[#146C94] py-2 px-5 border-2 border-cyan-800 rounded-3xl" href="/">Join Us</Link>
               </div>
             )}
           </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 }
