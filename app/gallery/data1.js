@@ -10,16 +10,16 @@ const images1 = [
         { src:image4, title: 'Graduating Batch of 2019', date: '27 January 2024'}
     ],
     [
-        { src:image2, title: 'Graduating batch of 2020', date: '27 January 2024'},
-        { src:image1, title: 'Graduating batch of 2020', date: '27 January 2024'},
-        { src:image3, title: 'Graduating batch of 2020', date: '27 January 2024'},
-        { src:image4, title: 'Graduating batch of 2020', date: '27 January 2024'},
+        { src:image2, title: 'Graduating batch of 2020', date: '29 January 2024'},
+        { src:image1, title: 'Graduating batch of 2020', date: '29 January 2024'},
+        { src:image3, title: 'Graduating batch of 2020', date: '29 January 2024'},
+        { src:image4, title: 'Graduating batch of 2020', date: '29 January 2024'},
     ],
     [
-        { src:image2, title: 'Graduating batch of 2021', date: '27 January 2024'},
-        { src:image1, title: 'Graduating batch of 2021', date: '27 January 2024'},
-        { src:image3, title: 'Graduating batch of 2021', date: '27 January 2024'},
-        { src:image4, title: 'Graduating batch of 2021', date: '27 January 2024'},
+        { src:image2, title: 'Graduating batch of 2021', date: '5 January 2024'},
+        { src:image1, title: 'Graduating batch of 2021', date: '5 January 2024'},
+        { src:image3, title: 'Graduating batch of 2021', date: '5 January 2024'},
+        { src:image4, title: 'Graduating batch of 2021', date: '5 January 2024'},
     ],
     [
         { src:image2, title: 'Graduating batch of 2022', date: '27 January 2024'},
