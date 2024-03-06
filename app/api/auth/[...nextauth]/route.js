@@ -8,6 +8,9 @@ const handler = NextAuth({
     GoogleProvider({
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
+      authorizationParams: {
+        hd: "itbhu.ac.in",
+      },
     }),
   ],
   callbacks: {
@@ -21,11 +24,10 @@ const handler = NextAuth({
       try {
         await connect();
         console.log(profile.email);
-        // Check if the email is of the desired format
         const emailPattern = /^[a-zA-Z]+\.[a-zA-Z]+\.mat\d{2}@itbhu\.ac\.in$/;
         if (!emailPattern.test(profile.email)) {
           console.log(
-            "What the fuck bro, you are not suppossed to login here!"
+            "Invalid email format. You are not supposed to login here!"
           );
           // If the email doesn't match the desired pattern, return false
           return false;
