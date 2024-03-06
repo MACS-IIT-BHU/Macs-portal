@@ -4,22 +4,22 @@ import smalllogo from "@/public/home/logo.svg";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import {
-  Bitter,
-  Monomaniac_One,
-  Montserrat,
-  Nanum_Brush_Script,
-} from "next/font/google";
+// import {
+//   Bitter,
+//   Monomaniac_One,
+//   Montserrat,
+//   Nanum_Brush_Script,
+// } from "next/font/google";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
-import { Murecho } from "next/font/google";
+// import { Murecho } from "next/font/google";
 
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 
 // import { Murecho } from 'next/font/google'
 
-const murecho = Murecho({ subsets: ["latin"] });
-const montserrat = Montserrat({ subsets: ["latin"] });
+// const murecho = Murecho({ subsets: ["latin"] });
+// const montserrat = Montserrat({ subsets: ["latin"] });
 
 import { useSession, signIn, signOut } from "next-auth/react";
 
@@ -55,35 +55,36 @@ export default function Home() {
 
   return (
     <>
-    <nav
-      className={`w-full navbar-hero md:pb-2 bg-gradient-to-r to-cyan-300 from-cyan-600 fixed z-20 ${murecho.className}`}
-    >
-      <div
-        className={`relative mx-4  px-4 md:flex md:justify-between item-center py-3 ${navbar ? "" : "h-16"
-          }`}
+      <nav
+        className={`w-full navbar-hero md:pb-2 bg-gradient-to-r to-cyan-300 from-cyan-600 fixed z-20 `}
       >
+        <div
+          className={`relative mx-4  px-4 md:flex md:justify-between item-center py-3 ${
+            navbar ? "" : "h-16"
+          }`}
+        >
           {/*Starting div for navbar navigators in mobile view */}
-        <div className="md:hidden justify-self-start grow">
-          <div className="flex w-[90vw] items-center justify-between  md:py-5 md:block">
-            <div>
-              <button
-                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                onClick={() => setNavbar(!navbar)}
-              >
-                {navbar ? (
-                  <RxCross1 size={25} color="white" />
-                ) : (
-                  <RxHamburgerMenu size={25} color="white" />
-                )}
-              </button>
-            </div>
+          <div className="md:hidden justify-self-start grow">
+            <div className="flex w-[90vw] items-center justify-between  md:py-5 md:block">
+              <div>
+                <button
+                  className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                  onClick={() => setNavbar(!navbar)}
+                >
+                  {navbar ? (
+                    <RxCross1 size={25} color="white" />
+                  ) : (
+                    <RxHamburgerMenu size={25} color="white" />
+                  )}
+                </button>
+              </div>
 
-            <div className="md:invisible sm:visible ">
-              {userData ? (
-                <Link href="/profile">Welcome, {userData.name} </Link>
-              ) : (
-                <div className="flex items-center justify-end  gap-2 px-2 ">
-                  {/* <Link
+              <div className="md:invisible sm:visible ">
+                {userData ? (
+                  <Link href="/profile">Welcome, {userData.name} </Link>
+                ) : (
+                  <div className="flex items-center justify-end  gap-2 px-2 ">
+                    {/* <Link
                     href="/login"
                     className="cursor-pointer  px-5 py-2  rounded-3xl bg-[#146c94] b_shadow translate-x-5"
                   >
@@ -95,132 +96,133 @@ export default function Home() {
                   >
                     Signup
                   </Link> */}
-                  <Link className="text-white font-semibold bg-[#146C94] py-1 px-4 border-2 border-cyan-800 rounded-3xl" href="/">Join Us</Link>
-
-                </div>
-              )}
+                    <Link
+                      className="text-white font-semibold bg-[#146C94] py-1 px-4 border-2 border-cyan-800 rounded-3xl"
+                      href="/"
+                    >
+                      Join Us
+                    </Link>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-        {/*Ending div for navbar navigators in mobile view */}
-        {/*First div */}
-        <div className=" md:min-w-[40vw]">
-          <div
-            className={`pb-3 md:block  md:pb-0 md:mt-0 md:px-0 ${navbar ? "block" : "hidden"
+          {/*Ending div for navbar navigators in mobile view */}
+          {/*First div */}
+          <div className=" md:min-w-[40vw]">
+            <div
+              className={`pb-3 md:block  md:pb-0 md:mt-0 md:px-0 ${
+                navbar ? "block" : "hidden"
               }`}
-          >
-            <ul
-              className={`flex flex-col p-4 md:pb-2 md:pt-0 mt-4  rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0 md:space-y-0 space-y-4 ${montserrat.className}`}
             >
-              <li
-                className={`px-2 py-3 hover:bg-white  rounded-lg ${path == "/" ? "bg-white " : ""
+              <ul
+                className={`flex flex-col p-4 md:pb-2 md:pt-0 mt-4  rounded-lg md:flex-row md:space-x-4 md:mt-0 md:border-0 md:space-y-0 space-y-4 `}
+              >
+                <li
+                  className={`px-2 py-3 hover:bg-white  rounded-lg ${
+                    path == "/" ? "bg-white " : ""
                   }`}
-                onClick={() => setNavbar(false)}
-              >
+                  onClick={() => setNavbar(false)}
+                >
+                  <Link
+                    href="/"
+                    className="font-medium text-black/75 hover:text-black/100 my-8"
+                  >
+                    Home
+                  </Link>
+                </li>
+
                 <Link
-                  href="/"
-                  className="font-medium text-black/75 hover:text-black/100 my-8"
+                  href="/announcements"
+                  className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
-                  Home
+                  <li
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${
+                      path == "/announcements" ? "bg-white" : ""
+                    }`}
+                    onClick={() => setNavbar(false)}
+                  >
+                    Events
+                  </li>
                 </Link>
-              </li>
-
-              <Link
-                href="/announcements"
-                className="font-medium  text-black/75 hover:text-black/100 my-8"
-              >
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/announcements" ? "bg-white" : ""
-                    }`}
-                  onClick={() => setNavbar(false)}
-
+                <Link
+                  href="/articles"
+                  className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
-
-                  Events
-                </li>
-              </Link>
-              <Link
-                href="/articles"
-                className="font-medium  text-black/75 hover:text-black/100 my-8"
-              >
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/articles" ? "bg-white" : ""
+                  <li
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${
+                      path == "/articles" ? "bg-white" : ""
                     }`}
-                  onClick={() => setNavbar(false)}
+                    onClick={() => setNavbar(false)}
+                  >
+                    Articles
+                  </li>
+                </Link>
 
+                <Link
+                  href="/gallery"
+                  className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
-                  Articles
-                </li>
-              </Link>
-
-              <Link
-                href="/gallery"
-                className="font-medium  text-black/75 hover:text-black/100 my-8"
-              >
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/gallery" ? "bg-white" : ""
+                  <li
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${
+                      path == "/gallery" ? "bg-white" : ""
                     }`}
-                  onClick={() => setNavbar(false)}
+                    onClick={() => setNavbar(false)}
+                  >
+                    Gallery
+                  </li>
+                </Link>
 
+                <Link
+                  href="/teams"
+                  className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
-
-                  Gallery
-                </li>
-              </Link>
-
-              <Link
-                href="/teams"
-                className="font-medium  text-black/75 hover:text-black/100 my-8"
-              >
-
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/teams" ? "bg-white" : ""
+                  <li
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${
+                      path == "/teams" ? "bg-white" : ""
                     }`}
-                  onClick={() => setNavbar(false)}
-
+                    onClick={() => setNavbar(false)}
+                  >
+                    Team
+                  </li>
+                </Link>
+                <Link
+                  href="/students"
+                  className="font-medium  text-black/75 hover:text-black/100 my-8"
                 >
-                  Team
-                </li>
-              </Link>
-              <Link
-                href="/students"
-                className="font-medium  text-black/75 hover:text-black/100 my-8"
-              >
-
-                <li
-                  className={`px-2 py-3 hover:bg-white rounded-lg ${path == "/students" ? "bg-white" : ""
+                  <li
+                    className={`px-2 py-3 hover:bg-white rounded-lg ${
+                      path == "/students" ? "bg-white" : ""
                     }`}
-                  onClick={() => setNavbar(false)}
-
-                >
-                  Students
-                </li>
-              </Link>
-
-            </ul>
+                    onClick={() => setNavbar(false)}
+                  >
+                    Students
+                  </li>
+                </Link>
+              </ul>
+            </div>
           </div>
-        </div>
-        {/*2nd number div for image container */}
-        <div className={`md:w-[20vw] md:hidden xl:block ${navbar || window.innerWidth>500?"visible":"invisible"}`}>
-          <center>
-            <Image src={smalllogo} width={180} alt="abc" />
-          </center>
-        </div>
-        {/*Last div for user Details or signin options */}
-        <div className="invisible md:visible ">
-          {userData ? (
-            <>
-              <Link href="/profile">Welcome, {userData.name} </Link>
-              <button
-                onClick={() => signOut()}
-                className="px-3 py-2 rounded border"
-              >
-                signOut
-              </button>
-            </>
-          ) : (
-            <div className="flex items-center justify-end gap-2  px-2  md:w-[40vw]">
-              {/* <Link
+          {/*2nd number div for image container */}
+          <div className={`md:w-[20vw] md:hidden xl:block `}>
+            <center>
+              <Image src={smalllogo} width={180} alt="abc" />
+            </center>
+          </div>
+          {/*Last div for user Details or signin options */}
+          <div className="invisible md:visible ">
+            {userData ? (
+              <>
+                <Link href="/profile">Welcome, {userData.name} </Link>
+                <button
+                  onClick={() => signOut()}
+                  className="px-3 py-2 rounded border"
+                >
+                  signOut
+                </button>
+              </>
+            ) : (
+              <div className="flex items-center justify-end gap-2  px-2  md:w-[40vw]">
+                {/* <Link
                 href="/login"
                 className="cursor-pointer  px-5 py-2  rounded-3xl bg-[#146c94] b_shadow translate-x-5"
               >
@@ -232,12 +234,17 @@ export default function Home() {
               >
                 Signup
               </Link> */}
-              <Link className="text-white font-semibold bg-[#146C94] py-2 px-5 border-2 border-cyan-800 rounded-3xl" href="/">Join Us</Link>
-            </div>
-          )}
+                <Link
+                  className="text-white font-semibold bg-[#146C94] py-2 px-5 border-2 border-cyan-800 rounded-3xl"
+                  href="/"
+                >
+                  Join Us
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </nav>
-  </>
+      </nav>
+    </>
   );
 }
