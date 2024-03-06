@@ -98,7 +98,7 @@ export default function Home() {
                   </Link> */}
                     <Link
                       className="text-white font-semibold bg-[#146C94] py-1 px-4 border-2 border-cyan-800 rounded-3xl"
-                      href="/"
+                      href="/login"
                     >
                       Join Us
                     </Link>
