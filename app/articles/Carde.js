@@ -22,7 +22,7 @@ function Carde({ blog }) {
       onMouseLeave={handleHoverLeave}
     >
       <div className="flex justify-center items-center min-h-[191px] bg-[#D9D9D9] rounded-b-none rounded-t-md">
-        <Image src={blog.img} alt="image" height={150} width={400}></Image>
+        <Image src={blog.img} alt="image" height={150} width={400} className="h-[300px] w-[400px]"></Image>
       </div>
       <div className="font-['Murecho'] text-[22px] mx-1">
         <p className="text-sm text-gray-500">23.4.2022</p>

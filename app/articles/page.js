@@ -30,14 +30,14 @@ const Events = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-slate-950 pt-4 relative top-20 flex flex-col justify-center items-center w-full">
+    <div className="min-h-screen text-slate-950 absolute flex flex-col justify-center items-center w-full bg-[#e8f1f5] bg-[url('https://www.transparenttextures.com/patterns/absurdity.png')]">
       <div
-        className={`top-slider  sm:h-[300px] sm:w-[98%] md:w-[90%] md:h-[600px] flex items-center relative`}
+        className={`top-slider h-[300px] md:h-[600px] w-[100vw] flex justify-center relative mt-[100px]`}
         onMouseEnter={() => setShowText(true)}
         onMouseLeave={() => setShowText(false)}
       >
         <div
-          className={`absolute text-left h-full w-full ${
+          className={`absolute text-left h-full w-[90%] ${
             showText ? "text-white custom-gradient" : "text-transparent"
           } flex flex-col justify-center`}
           style={{ transition: "normal 0.7s" }}
@@ -45,10 +45,10 @@ const Events = () => {
           <h2 className="text-lg font-bold px-3 w-1/2 md:text-6xl md:pt-4">
             Some title or Whatever
           </h2>
-          <p className="text-xs font-light px-3 md:text-lg md:pt-4 w-1/2">
+          <p className="text-xs font-light px-3 md:text-lg md:pt-4 w-1/2 text-gray-400">
             {article_holder[0].author}
           </p>
-          <p className="md:text-2xl px-3 md:font-light md:pt-4 w-4/12 overflow-hidden mb-2 mt-1">
+          <p className="md:text-xl px-3 md:font-light md:pt-4 w-4/12 overflow-hidden mb-2 mt-1 md:block hidden">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae
             tempus magna, id aliquam ligula. Sed ac sollicitudin mauris.
             Praesent vulputate accumsan nulla. Cras fermentum ornare tellus, sit
@@ -58,14 +58,14 @@ const Events = () => {
         </div>
         <img
           src="/home/image2.jpg"
-          className="h-full w-full object-cover custom-gradient"
+          className="h-full w-[90%] object-cover custom-gradient"
         />
       </div>
 
-      <div className="search-area flex justify-start items-center md:justify-start pt-6 w-[90%]">
+      <div className="search-area w-[90%] mt-[20px]">
         <input
           placeholder="Search Articles"
-          className="rounded-l-xl sm:px-3 sm:py-1 border-2 border-r-0 outline-none"
+          className=" py-[10px] px-[10px] rounded-sm outline-none"
         ></input>
         {/* <div className='border-2 rounded-r-xl bg-slate-400'>
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="33" viewBox="0 0 50 50">
