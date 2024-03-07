@@ -5,7 +5,6 @@ import Image from 'next/image';
 import prev from "@/public/home/prev.png"
 import next from "@/public/home/next.png"
 const ImgSlider = ({image,index , setShow , setidxx,setimgidx}) => {
-    ;
     const [idx,setidx] = useState(0);
     const setpreImage = (e)=>{
         e.stopPropagation();

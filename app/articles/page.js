@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Carde from "./Carde";
 import data from "../../public/data_articles.json";
 import axios from "axios";
+import Image from "next/image";
 // import image2 from '@/public/home/image2.jpg';
 // import Image from 'next/image'
 
@@ -12,8 +13,10 @@ const Events = () => {
   const article_holder3 = data.filter((item) => item.id <= 2);
   const [jsonData, setJsonData] = useState(data);
   const [showText, setShowText] = useState(false);
-
+  const [search,setSearch] = useState('');
+  const [showpop,setShowpop] = useState(false);
   const [allBlogs, setAllBlogs] = useState(null);
+  const [blog,setblog] = useState(null);
 
   useEffect(() => {
     const getBlogs = async () => {
@@ -30,7 +33,7 @@ const Events = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-slate-950 absolute flex flex-col justify-center items-center w-full bg-[#e8f1f5] bg-[url('https://www.transparenttextures.com/patterns/absurdity.png')]">
+    <div className="min-h-screen text-slate-950 absolute flex flex-col justify-center items-center w-full bg-[#e8f1f5] bg-[url('https://www.transparenttextures.com/patterns/absurdity.png')]" >
       <div
         className={`top-slider h-[300px] md:h-[600px] w-[100vw] flex justify-center relative mt-[100px]`}
         onMouseEnter={() => setShowText(true)}
@@ -62,10 +65,13 @@ const Events = () => {
         />
       </div>
 
-      <div className="search-area w-[90%] mt-[20px]">
+      <div className="search-area mt-[70px] flex justify-center mb-[30px]">
         <input
           placeholder="Search Articles"
-          className=" py-[10px] px-[10px] rounded-sm outline-none"
+          className=" py-[10px] px-[10px] rounded-sm outline-none lg:w-[40vw] w-[60vw]"
+          onChange={(e)=>{
+            setSearch(e.target.value);
+          }}
         ></input>
         {/* <div className='border-2 rounded-r-xl bg-slate-400'>
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="33" viewBox="0 0 50 50">
@@ -74,14 +80,28 @@ const Events = () => {
                 </div> */}
       </div>
 
-      <div className="flex flex-wrap justify-center gap-16 mb-[100px] py-10 px-5 md:w-[90%]">
+      <div className="flex flex-wrap justify-center gap-16 mb-[100px] py-10 px-5 md:w-[90%]" >
         {allBlogs &&
-          allBlogs.map((blog, index) => (
-            <div key={index}>
-              <Carde blog={blog} />
-            </div>
-          ))}
+          allBlogs.map((blog, index) => {
+            let title = blog?.title || " ";
+            if (title.toLowerCase().search(search.toLowerCase()) != -1 ) {
+              return (
+                  <div key={index}>
+                    <Carde blog={blog} setshowpop = {setShowpop} setblog = {setblog}/>
+                  </div>
+              )
+            }
+          })}
       </div>
+      {showpop &&
+          <div className="fixed top-0 w-[100vw] h-[100vh] flex justify-center items-center bg-gray-800" onClick={()=>{setShowpop(false)}}>
+            <div className="h-[70%] w-[80%] bg-white overflow-y-scroll flex items-center flex-col py-[20px]" onClick={(e)=>{setShowpop(true);e.stopPropagation()}}>
+              <Image src={blog.img} alt="image" height={150} width={400} ></Image>
+              <div className="mt-[20px] text-2xl font-bold">{blog.title}</div>
+              <div dangerouslySetInnerHTML={{__html: blog.blogContent}} className="text-md text-gray-800 mt-[20px] px-[20px]"></div>
+            </div>
+          </div>
+      }
     </div>
   );
 };
