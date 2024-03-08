@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import i2 from "../../public/home/image2.jpg";
 import Image from "next/image";
 import Link from "next/link";
-function Carde({ blog }) {
+function Carde({ blog,setshowpop,setblog}) {
   const [hover, setHover] = useState(false);
   function handleHoverEnter() {
     setHover(true);
@@ -14,14 +14,18 @@ function Carde({ blog }) {
   function handleHoverLeave() {
     setHover(false);
   }
+  function blogset(){
+    setblog(blog);
+    setshowpop(true);
+  }
   return (
-    <Link
-      href={`/articles/${blog._id}`}
+    <div
+      // href={`/articles/${blog._id}`}
       className={`cursor-pointer flex flex-col gap-3 w-[351px] hover:drop-shadow-sm hover:scale-105 hover:shadow-lg transition-all hover:rounded-md`}
       onMouseEnter={handleHoverEnter}
       onMouseLeave={handleHoverLeave}
     >
-      <div className="flex justify-center items-center min-h-[191px] bg-[#D9D9D9] rounded-b-none rounded-t-md">
+      <div className="flex justify-center items-center min-h-[191px] bg-[#D9D9D9] rounded-b-none rounded-t-md" onClick={blogset}>
         <Image src={blog.img} alt="image" height={150} width={400} className="h-[300px] w-[400px]"></Image>
       </div>
       <div className="font-['Murecho'] text-[22px] mx-1">
@@ -30,7 +34,7 @@ function Carde({ blog }) {
         <p className="font-medium">{blog.article}</p>
         <p className="text-end text-sm text-gray-500">{blog.author}</p>
       </div>
-    </Link>
+    </div>
   );
 }
 export default Carde;
