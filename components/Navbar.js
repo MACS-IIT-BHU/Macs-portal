@@ -203,11 +203,7 @@ export default function Home() {
             </div>
           </div>
           {/*2nd number div for image container */}
-          <div className={`md:w-[20vw] md:hidden xl:block `}>
-            <center>
-              <Image src={smalllogo} width={180} alt="abc" />
-            </center>
-          </div>
+          
           {/*Last div for user Details or signin options */}
           <div className="invisible md:visible ">
             {userData ? (
