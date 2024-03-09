@@ -17,21 +17,32 @@ import {
 
 const UserProfilePage = ({ params }) => {
   const { data: session } = useSession();
-
   const [user, setUser] = useState(null);
   const [editMode, setEditMode] = useState(false);
-
+  const [names,setname]=useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get(`/api/users/me?user=${params.id}`);
         setUser(res.data.data);
+        var name = res.data.data.name;
+        var si = name.length;
+        let k = si-1;
+        for (let i = 0; i < si; i++) {
+          if (name[i] == '5' && name[i + 1] == '-') { k = i; break; }
+        }
+        var str = "";
+        for (let i = 0; i < k; i++) { str += name[i]; } str += "     ";
+        
+        setname(str);
+    
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchData();
+  
   }, [params.id]);
 
   const handleEditClick = () => {
@@ -98,7 +109,7 @@ const UserProfilePage = ({ params }) => {
               </div>
               <div className="relative grid place-items-center md:place-items-start md:flex md:flex-col w-full p-10 md:p-0 md:w-4/5 md:top-24 xl:top-36">
                 <h2 className="relative text-4xl font-bold mb-4 text-black md:text-white text-center  line-clamp-2">
-                  {user.name}
+                {names}
                 </h2>
                 {editMode ? (
                   <UserEditForm user={user} onSubmit={handleFormSubmit} />

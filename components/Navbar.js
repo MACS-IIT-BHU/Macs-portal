@@ -31,10 +31,22 @@ export default function Home() {
   const { data: session } = useSession();
 
   const [userData, setUserData] = useState();
+  const [names,setname] = useState(null);
 
   useEffect(() => {
     if (session) {
       setUserData(session.user);
+      var st = userData?.name || " ";
+      var si = st.length;
+      let k = si-1;
+      for(let i =0 ; i < si ;i++)
+      {if(st[i]=='5' && st[i+1] =='-')
+       {k = i;break;}
+      }
+      var str = "";
+      for(let i = 0; i < k;i++)
+      {str+=st[i];}str+="     ";
+      setname(str);
     }
   }, [session]);
   console.log(path);
@@ -81,7 +93,7 @@ export default function Home() {
 
               <div className="md:invisible sm:visible ">
                 {userData ? (
-                  <Link href="/profile">Welcome, {userData.name} </Link>
+                  <Link href="/profile">Welcome, {name} </Link>
                 ) : (
                   <div className="flex items-center justify-end  gap-2 px-2 ">
                     {/* <Link
@@ -208,11 +220,13 @@ export default function Home() {
           <div className="invisible md:visible ">
             {userData ? (
               <>
-                <Link href="/profile">Welcome, {userData.name} </Link>
+            
+                <Link href="/profile">Welcome, {names}  </Link>
                 <button
                   onClick={() => signOut()}
                   className="px-3 py-2 rounded border"
                 >
+                  
                   signOut
                 </button>
               </>
