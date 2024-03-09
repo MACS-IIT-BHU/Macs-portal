@@ -17,7 +17,6 @@ import {
 
 const UserProfilePage = ({ params }) => {
   const { data: session } = useSession();
-
   const [user, setUser] = useState(null);
   const [editMode, setEditMode] = useState(false);
 
