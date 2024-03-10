@@ -41,10 +41,10 @@ const handler = NextAuth({
             name: profile.name,
             img: profile.picture,
             about: "",
-            yearOfJoining: "",
-            github: "",
-            linkedin: "",
-            skills: "",
+            yearOfJoining: "2021",
+            github: "https://github.com/anurag0006",
+            linkedin: "https://www.linkedin.com/in/anurag-kamboj/",
+            skills: "Nextjs, Reactjs, Nodejs, MongoDB, Graphql, FastApis",
             resume: "",
           });
         }
