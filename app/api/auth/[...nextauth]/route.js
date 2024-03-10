@@ -3,15 +3,11 @@ import GoogleProvider from "next-auth/providers/google";
 import { connect } from "@/dbConfig/dbConfig";
 import User from "@/models/userModel";
 
-export default NextAuth({
-  secret: process.env.NEXTAUTH_SECRET,
-});
-
 const handler = NextAuth({
   providers: [
     GoogleProvider({
-      CLIENT_ID: process.env.CLIENT_ID,
-      CLIENT_SECRET: process.env.CLIENT_SECRET,
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
       authorizationParams: {
         hd: "itbhu.ac.in",
       },
@@ -45,10 +41,10 @@ const handler = NextAuth({
             name: profile.name,
             img: profile.picture,
             about: "",
-            yearOfJoining: "",
-            github: "",
-            linkedin: "",
-            skills: "",
+            yearOfJoining: "2021",
+            github: "https://github.com/anurag0006",
+            linkedin: "https://www.linkedin.com/in/anurag-kamboj/",
+            skills: "Nextjs, Reactjs, Nodejs, MongoDB, Graphql, FastApis",
             resume: "",
           });
         }
