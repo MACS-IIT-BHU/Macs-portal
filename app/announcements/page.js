@@ -57,7 +57,7 @@ const Announcements = () => {
     useEffect(() => {
         if (session) {
             // console.log(session.user.email);
-            if (session.user.email === 'mayank.bharti.mat21@itbhu.ac.in') {
+            if (session.user.email === 'divyansh.sahu.mat21@itbhu.ac.in') {
                 setShowButton(true);
             }
             else {
