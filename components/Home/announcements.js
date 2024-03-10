@@ -34,9 +34,9 @@ const Announcements = () => {
                         </div>}
                     </div>))}
                 {modaluse && <Modal id={modalv} modal_check={setmodaluse} />}
-                <div class="cd-timeline-block">
+                <div className="cd-timeline-block">
                     <form action='/announcements'><button type='submit'>
-                        <div class="cd-timeline-img cd-picture">
+                        <div className="cd-timeline-img cd-picture">
                             <img src="https://www.svgrepo.com/show/80156/down-arrow.svg" alt="Picture"></img>
                         </div>
                     </button></form>
