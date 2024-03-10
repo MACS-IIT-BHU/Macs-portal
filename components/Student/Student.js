@@ -12,7 +12,7 @@ function Student({ key, event, student }) {
   return (
     <div
       key={key}
-      className="bg-white flex md:w-1/5 mx-14 md:mx-0 flex-col items-center justify-center p-6 mb-4 rounded-lg shadow-md"
+      className="bg-white flex md:w-1/5 mx-14 mt-5 flex-col items-center justify-center p-6 mb-4 rounded-lg shadow-md"
     >
       <div className="relative rounded-full border h-[100px] w-[100px] overflow-hidden">
         <Image src={student.img} alt={"img"} width={100} height={100} />

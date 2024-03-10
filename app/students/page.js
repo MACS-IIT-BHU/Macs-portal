@@ -35,7 +35,7 @@ const Students = () => {
             setSearch(e.target.value)
           }} />
       </div>
-      <div className="flex flex-col md:flex-row md:gap-4">
+      <div className="flex flex-wrap flex-col md:flex-row md:gap-4 justify-center ">
         {students &&
           students.map((student) => {
             let temp = student.name.toLowerCase();
@@ -46,7 +46,8 @@ const Students = () => {
                 </>
               )
             }
-          })}
+          })
+        }
       </div>
     </div>
   );
