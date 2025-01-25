@@ -1,79 +1,49 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import classes from '../../components/Home/announcements.css';
-import Modal from '../../app/announcements/modal';
-import axios from 'axios';
+'use client'
+import React from 'react'
+import classes from '../../components/Home/announcements.css'
+import { useState } from 'react'
+import Modal from '../../app/announcements/modal'
+import data from '../../public/database.json'
 
 const Announcements = () => {
-    const [allEvents, setAllEvents] = useState([]);
-    const [modalv, setModal] = useState(0);
-    const [modalUse, setModalUse] = useState(false);
-
-    useEffect(() => {
-        const fetchEvents = async () => {
-            try {
-                const res = await axios.get('/api/event');
-                setAllEvents(res.data.events);
-            } catch (error) {
-                console.error('Error fetching events:', error);
-            }
-        };
-        fetchEvents();
-    }, []);
-
-    const modalOpener = (element) => {
-        setModal(element);
-        setModalUse(true);
-        console.log('Modal opened for:', element);
-    };
-
+    const [jsonData, setJsonData] = useState(data);
+    const [modalv, setmodal] = useState(0);
+    const [modaluse, setmodaluse] = useState(false);
+    const [data2, setdata] = useState(jsonData.announcements.filter((ann) => ann.id <= 3));
+    const modal_opener = (id) => {
+        setmodal(id);
+        setmodaluse(true);
+        console.log("hello opp" + id);
+    }
     return (
         <div className="w-screen">
             <section id="cd-timeline" className="cd-container">
-                {allEvents.map((element) => (
+                {data2.map((element) => (
                     <div className="cd-timeline-block" key={element.id}>
-                        <div>
+                        {<div>
                             <div className="cd-timeline-img cd-picture">
-                                <img
-                                    src="https://www.svgrepo.com/show/493649/circle-filled-circle-radio-filled-round-bullet.svg"
-                                    alt="Picture"
-                                />
+                                <img src="https://www.svgrepo.com/show/493649/circle-filled-circle-radio-filled-round-bullet.svg" alt="Picture"></img>
                             </div>
-                            <div className="cd-timeline-content">
-                                <div className="header">
-                                    <h2>{element.title}</h2>
-                                </div>
-                                <p>
-                                    {element.eventContent.substr(0, 101) + '...'}
-                                    <a href="#" onClick={(e) => {
-                                        e.preventDefault();
-                                        modalOpener(element);
-                                    }}>
-                                    Read More
-                                    </a>
 
-                                </p>
+                            <div className="cd-timeline-content">
+                                <div className='header'><h2>{element.title}</h2></div>
+                                <p>{element.body.substr(0, 101) + "..."}<a href="#" onClick={() => modal_opener(element.id)}>Read More</a></p>
+                                {/* <a class="btn" href="#open-modal">Read More</a> */}
                                 <span className="cd-date">{element.date}</span>
                             </div>
-                        </div>
-                    </div>
-                ))}
-                {modalUse && <Modal modal_check={setModalUse} element={modalv} />}
+                        </div>}
+                    </div>))}
+                {modaluse && <Modal id={modalv} modal_check={setmodaluse} />}
                 <div className="cd-timeline-block">
-                    <form action="/announcements">
-                        <button type="submit">
-                            <div className="cd-timeline-img cd-picture">
-                                <img
-                                    src="https://www.svgrepo.com/show/80156/down-arrow.svg"
-                                    alt="Picture"
-                                />
-                            </div>
-                        </button>
-                    </form>
+                    <form action='/announcements'><button type='submit'>
+                        <div className="cd-timeline-img cd-picture">
+                            <img src="https://www.svgrepo.com/show/80156/down-arrow.svg" alt="Picture"></img>
+                        </div>
+                    </button></form>
                 </div>
             </section>
         </div>
     );
-};
+}
 
 export default Announcements;
