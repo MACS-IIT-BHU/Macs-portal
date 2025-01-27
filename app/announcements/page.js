@@ -111,6 +111,25 @@ const Announcements = () => {
         }
     }
 
+    const handleDeleteEvent = async (id) => {
+        if (!id) {
+            console.error("Event ID is undefined");
+            return;
+        }
+
+        try {
+            const response = await axios.delete(`/api/event?id=${id}`);
+            if (response.status === 200) {
+                console.log("Event deleted successfully");
+                setAllEvents((prevEvents) => prevEvents.filter((event) => event.id !== id));
+            }
+        } catch (error) {
+            console.error("Error deleting event:", error);
+        }
+    };
+
+
+
     const [dataModal, setDataModal] = useState(null)
 
     return (
@@ -197,6 +216,14 @@ const Announcements = () => {
                                     <button onClick={() => modal_opener(element)}>Read More</button>
                                 </p>
                                 <span className="cd-date">{element.date}</span>
+                                {showButton && (
+                                    <button
+                                        className="border px-5 py-2 bg-red-600 text-white rounded-xl hover:bg-red-500 active:bg-red-600 padding: 1em"
+                                        onClick={() => handleDeleteEvent(element._id)} // Use `_id` since MongoDB uses it as the unique identifier
+                                    >
+                                        Delete
+                                    </button>
+                                )}
                             </div>
 
                         </div>
@@ -218,3 +245,4 @@ const Announcements = () => {
 }
 
 export default Announcements;
+
