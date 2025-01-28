@@ -72,3 +72,33 @@ export async function POST(req, res) {
     return NextResponse.json({ message: "Internal server error" });
   }
 }
+
+export async function DELETE(req, res) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get("id");
+
+    if (!id) {
+      return NextResponse.json({ message: "Event ID is required" }, { status: 400 });
+    }
+
+    const deletedEvent = await Event.findByIdAndDelete(id);
+
+    if (!deletedEvent) {
+      return NextResponse.json({ message: "Event not found" }, { status: 404 });
+    }
+
+    return NextResponse.json({
+      message: "Event deleted successfully",
+      event: deletedEvent,
+      status: 200,
+    });
+  } catch (err) {
+    console.error(err);
+    return NextResponse.json(
+        { message: "Internal server error" },
+        { status: 500 }
+    );
+  }
+}
+
