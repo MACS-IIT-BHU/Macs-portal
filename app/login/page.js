@@ -77,21 +77,25 @@ const Login = () => {
   }, [user]);
 
   return (
-    <div className="h-[80vh] flex items-center justify-center flex-col gap-4">
-      <button onClick={handleLoginClick} className="px-3 py-2 rounded border">
-        Login/Signup with Google
-      </button>
-      <button onClick={() => signOut()} className="px-3 py-2 rounded border">
-        signOut
-      </button>
-      {/* <p>{loading ? "Processing" : "Login"}</p>
-        <input onChange={handleChange} name='email' type='text' placeholder='enter username' className='text-black border px-4 py-2 rounded-md  border-black '></input>
-        <input onChange={handleChange} name='password' type='password' placeholder='enter password' className='text-black border px-4 py-2 rounded-md  border-black '></input>
-        <button onClick={handleLogin} className='border py-2 px-3 rounded hover:scale-105 transition-all delay-150' >{buttonDisabled ? "Fill all details first" : "Submit"}</button>
-        <Link href='/signup'>Visit Signup Page</Link> */}
+    <div className="h-[80vh] flex items-center justify-center flex-col gap-6 bg-gray-50 text-gray-800">
+  <button
+    onClick={handleLoginClick}
+    className="px-6 py-3 rounded-lg border border-gray-300 shadow-sm bg-blue-600 text-white font-medium hover:bg-blue-700 hover:shadow-lg transition-all duration-200"
+  >
+    Login/Signup with Google
+  </button>
+  <button
+    onClick={() => signOut()}
+    className="px-6 py-3 rounded-lg border border-gray-300 shadow-sm bg-red-600 text-white font-medium hover:bg-red-700 hover:shadow-lg transition-all duration-200"
+  >
+    Sign Out
+  </button>
+  
+  <p className="text-lg font-medium">
+    {userData ? userData.name : "User not signed in"}
+  </p>
+</div>
 
-      {userData ? userData.name : "User not signed in"}
-    </div>
   );
 };
 
