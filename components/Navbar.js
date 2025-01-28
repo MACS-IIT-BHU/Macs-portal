@@ -221,7 +221,7 @@ export default function Home() {
             {userData ? (
               <>
             
-                <Link href="/profile">Welcome, {names}  </Link>
+                <Link href="/">Welcome, {names}  </Link>
                 <button
                   onClick={() => signOut()}
                   className="px-3 py-2 rounded border"
