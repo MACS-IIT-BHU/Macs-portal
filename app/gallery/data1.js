@@ -10,18 +10,18 @@ import numvsden1 from "../../public/home/numvsden1.jpg"
 import numvsden2 from "../../public/home/numvsden2.jpg"
 import numvsden3 from "../../public/home/numvsden3.jpg"
 import numvsden4 from "../../public/home/numvsden4.jpg"
-import orien1 from "../../public/home/orien1.jpg"
-import orien2 from "../../public/home/orien2.jpg"
-import orien3 from "../../public/home/orien3.jpg"
+import orien1 from "../../public/home/orient1.jpg"
+import orien2 from "../../public/home/orient2.jpg"
 import sports1 from "../../public/home/sports1.jpg"
 import sports2 from "../../public/home/sports2.jpg"
 
 
 const images1 = [
     [
-        { src:orien1, title: 'Orientation 1st year 2024', date: '29 January 2025'},
-        { src:orien2, title: 'Orientation 1st year 2024', date: '29 January 2025'},
-        { src:orien1, title: 'Orientation 1st year 2024', date: '29 January 2025'},
+        { src:orien1, title: 'Orientation 1st year 2021', date: '29 January 2025'},
+        { src:orien2, title: 'Orientation 1st year 2021', date: '29 January 2025'},
+        { src:orien1, title: 'Orientation 1st year 2021', date: '29 January 2025'},
+        { src:orien2, title: 'Orientation 1st year 2021', date: '29 January 2025'},
     ],
     [
         { src:numvsden2, title: 'Numerator vs Denominator 2024', date: '29 January 2025'},
