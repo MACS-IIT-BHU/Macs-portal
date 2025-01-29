@@ -93,7 +93,7 @@ export default function Home() {
 
               <div className="md:invisible sm:visible ">
                 {userData ? (
-                  <Link href="/profile">Welcome, {name} </Link>
+                  <Link className={"text-black"} href="/profile">Welcome, {name} </Link>
                 ) : (
                   <div className="flex items-center justify-end  gap-2 px-2 ">
                     {/* <Link
@@ -138,7 +138,7 @@ export default function Home() {
                 >
                   <Link
                     href="/"
-                    className="font-medium text-black/75 hover:text-black/100 my-8"
+                    className=" text-black font-bold hover:text-cyan-900 my-8"
                   >
                     Home
                   </Link>
@@ -146,7 +146,7 @@ export default function Home() {
 
                 <Link
                   href="/announcements"
-                  className="font-medium  text-black/75 hover:text-black/100 my-8"
+                  className="text-black font-bold hover:text-cyan-900 my-8"
                 >
                   <li
                     className={`px-2 py-3 hover:bg-white rounded-lg ${
@@ -159,7 +159,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/articles"
-                  className="font-medium  text-black/75 hover:text-black/100 my-8"
+                  className="text-black font-bold hover:text-cyan-900 my-8"
                 >
                   <li
                     className={`px-2 py-3 hover:bg-white rounded-lg ${
@@ -173,7 +173,7 @@ export default function Home() {
 
                 <Link
                   href="/gallery"
-                  className="font-medium  text-black/75 hover:text-black/100 my-8"
+                  className="text-black font-bold hover:text-cyan-900 my-8"
                 >
                   <li
                     className={`px-2 py-3 hover:bg-white rounded-lg ${
@@ -187,7 +187,7 @@ export default function Home() {
 
                 <Link
                   href="/teams"
-                  className="font-medium  text-black/75 hover:text-black/100 my-8"
+                  className="text-black font-bold hover:text-cyan-900 my-8"
                 >
                   <li
                     className={`px-2 py-3 hover:bg-white rounded-lg ${
@@ -200,7 +200,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/students"
-                  className="font-medium  text-black/75 hover:text-black/100 my-8"
+                  className="text-black font-bold hover:text-cyan-900 my-8"
                 >
                   <li
                     className={`px-2 py-3 hover:bg-white rounded-lg ${
