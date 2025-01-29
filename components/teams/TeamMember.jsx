@@ -14,7 +14,7 @@ function TeamMember() {
         <TeamName team={"Core Team"} />
         <div className="flex flex-col md:flex-row gap-10">
         <Member
-          name={"Kartik Mishra"}
+          name={"Kartik Malik"}
           position={"Vice President"}
           image={memImg}
         />
