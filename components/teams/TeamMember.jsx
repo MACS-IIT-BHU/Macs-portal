@@ -2,8 +2,9 @@ import React from "react";
 import TeamName from "./TeamName";
 import Member from "./Member";
 import memImg from "../../public/home/pexels-pixabay-220453.jpg";
-import Sanyam from "../../public/home/Sanyam.jpg";
-import Divyansh from "../../public/home/Divyansh.jpg";
+import Sanyam from "../../public/home/sanyam.JPG";
+import Divyansh from "../../public/home/divyansh.jpg";
+import Pranathi from "../../public/home/pranathi.jpg";
 
 
 function TeamMember() {
@@ -51,7 +52,7 @@ function TeamMember() {
           <Member
             name={"Pranithi S"}
             position={"Jt. Secretary"}
-            image={memImg}
+            image={Pranathi}
           />
         </div>
       </div>
