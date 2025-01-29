@@ -10,20 +10,17 @@ const Hero = () => {
                 <Image  src={MACSlogo} alt="abc" />
             </div>
             <div className="flex-1 mr-[5vw] ml-[5vw] text-justify">
-                <h2 className="font-Montserrat font-bold drop-shadow-lg">
-                    Mathematics and Computing Society (MACS) is a non-profit organization
-                    run by the students of The Department of Mathematical Sciences.
-                    <br />
-                    <br />
+                <h1 className="mt-4 text-xl md:text-2xl font-bold leading-relaxed text-gray-100">
+                    The Mathematics and Computing Society (MACS) is a non-profit organization,
+                    entirely driven by the enthusiastic students of The Department of Mathematical
+                    Sciences at the Indian Institute of Technology (BHU), Varanasi. Our society is
+                    a dynamic platform for students passionate about mathematics, computer science, and
+                    related fields to come together, explore their interests, and enrich their knowledge
+                    and skills.
+                </h1>
 
-                    We serve as a platform for students interested in mathematics, computer science, and related fields to come together, explore their interests, and enhance their knowledge and skills.
-                    <br />
-                    <br />
-
-                    We organize various events, workshops, seminars, coding competitions, hackathons, and guest lectures to promote learning, foster a sense of community, and encourage participation in technical activities
-                </h2>
             </div>
-            
+
 
         </div>
     )
