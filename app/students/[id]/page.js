@@ -116,7 +116,7 @@ const UserProfilePage = ({ params }) => {
                 ) : (
                   <>
                     <div className="relative text-xl  mt-2">
-                      yearOfJoining: {user.yearOfJoining}
+                      yearOfGraduation: {user.yearOfGraduation}
                     </div>
                     <div className="mt-6">
                       <p>

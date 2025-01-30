@@ -16,7 +16,7 @@ const UserEditForm = ({ user, onSubmit }) => {
   const [updatedUser, setUpdatedUser] = useState({
     name: user.name,
     email: user.email,
-    yearOfJoining: user.yearOfJoining,
+    yearOfGraduation: user.yearOfGraduation,
     github: user.github,
     linkedin: user.linkedin,
     skills: user.skills,
@@ -125,9 +125,9 @@ const UserEditForm = ({ user, onSubmit }) => {
           </label>
           <input
             type="text"
-            id="yearOfJoining"
-            name="yearOfJoining"
-            value={updatedUser.yearOfJoining}
+            id="yearOfGraduation"
+            name="yearOfGraduation"
+            value={updatedUser.yearOfGraduation}
             onChange={handleChange}
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
           />
