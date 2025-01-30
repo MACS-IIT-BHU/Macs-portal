@@ -94,7 +94,7 @@ function TeamMember() {
             image={memImg}
           />
           <Member
-            name={"Pranithi S"}
+            name={"Pranathi S"}
             position={"Jt. Secretary"}
             image={Pranathi}
           />
