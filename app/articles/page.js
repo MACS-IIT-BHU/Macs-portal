@@ -33,7 +33,7 @@ const Events = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-slate-950 absolute flex flex-col justify-center items-center w-full bg-[#e8f1f5] bg-[url('https://www.transparenttextures.com/patterns/absurdity.png')]" >
+    <div className="min-h-screen text-slate-950 absolute flex flex-col rounded-3xl justify-center items-center w-full bg-[#e8f1f5] bg-[url('https://www.transparenttextures.com/patterns/absurdity.png')]" >
       <div
         className={`top-slider h-[300px] md:h-[600px] w-[100vw] flex justify-center relative mt-[100px]`}
         onMouseEnter={() => setShowText(true)}
@@ -43,29 +43,29 @@ const Events = () => {
           className={`absolute text-left h-full w-[90%] ${
             showText ? "text-white custom-gradient" : "text-transparent"
           } flex flex-col justify-center`}
-          style={{ transition: "normal 0.7s" }}
+          style={{ transition: "normal 0.7s rounded-3xl" }}
         >
           <h2 className="text-lg font-bold px-3 w-1/2 md:text-6xl md:pt-4">
-            Some title or Whatever
+            Numerator vs Denominator
           </h2>
           <p className="text-xs font-light px-3 md:text-lg md:pt-4 w-1/2 text-gray-400">
             {article_holder[0].author}
           </p>
           <p className="md:text-xl px-3 md:font-light md:pt-4 w-4/12 overflow-hidden mb-2 mt-1 md:block hidden">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae
-            tempus magna, id aliquam ligula. Sed ac sollicitudin mauris.
-            Praesent vulputate accumsan nulla. Cras fermentum ornare tellus, sit
-            amet accumsan leo posuere sed. Suspendisse ut felis at ante viverra
-            eleifend.
+            We recently hosted Numerator vs Denominator, a thrilling mathematical showdown at our department.
+            The event featured rounds of puzzles, integration challenges, team buzzer quizzes, and an ultimate showdown.
+            With prizes worth INR 7k on the line, participants showcased their problem-solving skills and teamwork.
+            The competition concluded with champions celebrating their victory, highlighting the vibrant mathematics
+            community at IIT BHU and our commitment to fostering learning and competition.
           </p>
         </div>
         <img
-          src="/home/image2.jpg"
-          className="h-full w-[90%] object-cover custom-gradient"
+          src="/home/numvsden3.jpg"
+          className="h-full w-[90%] object-cover custom-gradient rounded-3xl"
         />
       </div>
 
-      <div className="search-area mt-[70px] flex justify-center mb-[30px]">
+      <div className="search-area mt-[70px] flex justify-center mb-[30px] rounded-2xl">
         <input
           placeholder="Search Articles"
           className=" py-[10px] px-[10px] rounded-sm outline-none lg:w-[40vw] w-[60vw]"
