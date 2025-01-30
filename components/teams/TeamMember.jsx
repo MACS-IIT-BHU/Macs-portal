@@ -27,7 +27,7 @@ function TeamMember() {
         <a href="https://iitbhu.ac.in/dept/mat/people/rkpandeymat">
         <Member
           name={"Dr Rajesh Kumar Pandey"}
-          position={"treasure"}
+          position={"Treasure"}
           image={rkp}
          /></a>
         
