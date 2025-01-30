@@ -4,18 +4,20 @@ import classes from './imageSlider.module.css';
 import Image from 'next/image'
 
 // this section contains all the refs to images to be displayes in alums sections
-import i2 from "@/public/home/image2.jpg"
-//  import i4 from "@/public/home/i"              /*please put the correct image format with name*/
-//  import i5 from "@/public/home/"
+import i1 from "@/public/home/lockart1.jpg"
+import i2 from "@/public/home/numvsden3.jpg"
+import i3 from "@/public/home/orient2.jpg"
+import i4 from "@/public/home/sports1.jpg"
+import i5 from "@/public/home/numvsden4.jpg"
 // this section contains all the refs to images to be displayes in alums sections
- 
+
 
 //let image_url_container=[i2,i2,i2,i2,i2]
 function ImageSlider() {
   let scrollContainerRef=useRef(null);
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  const image_url_container = [i2, i2, i2,i2,i2];
+  const image_url_container = [i1, i2, i3,i4,i5];
 
   const handleScroll = (e) => {
     const scrollPosition = e.target.scrollLeft;
@@ -26,11 +28,11 @@ function ImageSlider() {
 
   const renderDots = () => {
     return image_url_container.map((_, index) => (
-      <span
-        key={index}
-        className={`${classes.dot} ${activeIndex === index ? classes.active : ''}`}
-        onClick={() => setActiveIndex(index)}
-      ></span>
+        <span
+            key={index}
+            className={`${classes.dot} ${activeIndex === index ? classes.active : ''}`}
+            onClick={() => setActiveIndex(index)}
+        ></span>
     ));
   };
 
@@ -60,25 +62,25 @@ function ImageSlider() {
 
   const image_container = image_url_container.map((item, pos) => {
     return (
-      <section className={classes.scroll_item} key={pos}>
-        <Image src={item} className={classes.macs_images} alt="img" />
-      </section>
+        <section className={classes.scroll_item} key={pos}>
+          <Image src={item} className={classes.macs_images} alt="img" />
+        </section>
     );
   });
 
 
   return (
-    <div className={classes.slider_container}>
-      <div
-      ref={scrollContainerRef} 
-        className={classes.scroll_container}
-        onScroll={handleScroll}
-        // Add other necessary properties for scrolling
-      >
-        {image_container}
+      <div className={classes.slider_container}>
+        <div
+            ref={scrollContainerRef}
+            className={classes.scroll_container}
+            onScroll={handleScroll}
+            // Add other necessary properties for scrolling
+        >
+          {image_container}
+        </div>
+        <div className={classes.pagination}>{renderDots()}</div>
       </div>
-      <div className={classes.pagination}>{renderDots()}</div>
-    </div>
   );
 }
 

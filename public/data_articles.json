@@ -1,36 +1,36 @@
- [{
+[{
     "content" : "Our first-year orientation was pivotal for new students entering the professional landscape of mathematics and computing at IIT BHU. This event not only provided essential guidance and insights from senior members but also offered a comprehensive understanding of the working structure of MACS. Attendees gained valuable knowledge and resources to navigate their academic journey with confidence, equipped with insights into the functioning of our vibrant community",
     "heading" : "1st Year Orientation",
-    "author" : "Subir Das",
+    "author" : "",
     "id" : 1,
     "date" : "12 August,2023"
 },
-{
-    "content" : "We recently hosted \"Numerator vs. Denominator,\" a thrilling mathematical showdown at our department. The event featured rounds of puzzles, integration challenges, team buzzer quizzes, and an ultimate showdown. With prizes worth INR 7k on the line, participants showcased their problem-solving skills and teamwork. The competition concluded with champions celebrating their victory, highlighting the vibrant mathematics community at IIT BHU and our commitment to fostering learning and competition.",
-    "heading" : "Numerator vs Denominator",
-    "author" : "Subir Das",
-    "id" : 2,
-    "date" : "12 August,2023"
-},
-{
-    "content" : "MACS organized Lock'art, a thrilling competitive coding event at IIT BHU. In the initial round, participants showcased their problem-solving abilities, tackling diverse algorithmic challenges. The top performers then advanced to the second round, engaging in head-to-head coding duels. In these intense matchups, participants raced against the clock to solve coding challenges faster and more accurately than their opponents. Winners were rewarded with exciting prizes, making Lock'art a memorable experience for all involved.",
-    "heading" : "Lock'art: Competitive Coding Competition",
-    "author" : "Subir Das",
-    "id" : 3,
-    "date" : "12 August,2023"
-},
-{
-    "content" : "In response to the growing concern surrounding mental health, our society organized an enlightening session: Interaction with On-campus Psychologists. With the presence of all students and professors of the department, attendees received valuable insights into available mental health resources, engaged in discussions about common challenges, and received guidance from qualified professionals. The event aimed to cultivate a supportive community and encourage proactive steps towards mental well-being.",
-    "heading" : "Interaction with psychologists",
-    "author" : "Subir Das",
-    "id" : 4,
-    "date" : "12 August,2023"
-},
-{
-    "content" : "MACS Sports Week is in full swing, igniting the spirit of competition and camaraderie among participants. Students are immersed in a variety of thrilling games, ranging from traditional sports like Cricket and Badminton to e-sports favorites such as FIFA and Valorant. With ongoing matches and tournaments, every day brings new challenges and opportunities for our athletes to showcase their skills.\nAs the action unfolds, participants are engaged in intense showdowns, displaying athleticism and strategic prowess across multiple disciplines. While the finals of Badminton, Volleyball, and Kabaddi have already concluded, the excitement continues with a lineup of remaining events, including Basketball, Table Tennis, and more.\nStay tuned for updates as MACS Sports Week unfolds, celebrating the passion for sports and e-sports alike while fostering a sense of community within MACS.",
-    "heading" : "MACS Sports Week: Experience the Excitement!",
-    "author" : "Subir Das",
-    "id" : 5,
-    "date" : "12 August,2023"
-}
+    {
+        "content" : "We recently hosted \"Numerator vs. Denominator,\" a thrilling mathematical showdown at our department. The event featured rounds of puzzles, integration challenges, team buzzer quizzes, and an ultimate showdown. With prizes worth INR 7k on the line, participants showcased their problem-solving skills and teamwork. The competition concluded with champions celebrating their victory, highlighting the vibrant mathematics community at IIT BHU and our commitment to fostering learning and competition.",
+        "heading" : "Numerator vs Denominator",
+        "author" : "",
+        "id" : 2,
+        "date" : "12 August,2023"
+    },
+    {
+        "content" : "MACS organized Lock'art, a thrilling competitive coding event at IIT BHU. In the initial round, participants showcased their problem-solving abilities, tackling diverse algorithmic challenges. The top performers then advanced to the second round, engaging in head-to-head coding duels. In these intense matchups, participants raced against the clock to solve coding challenges faster and more accurately than their opponents. Winners were rewarded with exciting prizes, making Lock'art a memorable experience for all involved.",
+        "heading" : "Lock'art: Competitive Coding Competition",
+        "author" : "",
+        "id" : 3,
+        "date" : "12 August,2023"
+    },
+    {
+        "content" : "In response to the growing concern surrounding mental health, our society organized an enlightening session: Interaction with On-campus Psychologists. With the presence of all students and professors of the department, attendees received valuable insights into available mental health resources, engaged in discussions about common challenges, and received guidance from qualified professionals. The event aimed to cultivate a supportive community and encourage proactive steps towards mental well-being.",
+        "heading" : "Interaction with psychologists",
+        "author" : "",
+        "id" : 4,
+        "date" : "12 August,2023"
+    },
+    {
+        "content" : "MACS Sports Week is in full swing, igniting the spirit of competition and camaraderie among participants. Students are immersed in a variety of thrilling games, ranging from traditional sports like Cricket and Badminton to e-sports favorites such as FIFA and Valorant. With ongoing matches and tournaments, every day brings new challenges and opportunities for our athletes to showcase their skills.\nAs the action unfolds, participants are engaged in intense showdowns, displaying athleticism and strategic prowess across multiple disciplines. While the finals of Badminton, Volleyball, and Kabaddi have already concluded, the excitement continues with a lineup of remaining events, including Basketball, Table Tennis, and more.\nStay tuned for updates as MACS Sports Week unfolds, celebrating the passion for sports and e-sports alike while fostering a sense of community within MACS.",
+        "heading" : "MACS Sports Week: Experience the Excitement!",
+        "author" : "",
+        "id" : 5,
+        "date" : "12 August,2023"
+    }
 ]
