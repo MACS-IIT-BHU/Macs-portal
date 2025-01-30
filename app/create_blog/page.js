@@ -15,7 +15,7 @@ const CustomEditor = dynamic(
 function Home() {
   return (
     <div className="pt-20 w-[100%]">
-      <CustomEditor initialData="<h1>Hello from Anurag Kamboj, what would you like to write today?</h1>" />
+      <CustomEditor initialData="" />
     </div>
   );
 }

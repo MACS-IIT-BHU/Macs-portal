@@ -1,71 +1,108 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Carde from "./Carde";
 import data from "../../public/data_articles.json";
+import axios from "axios";
 import Image from "next/image";
+// import image2 from '@/public/home/image2.jpg';
+// import Image from 'next/image'
 
 const Events = () => {
-    const [search, setSearch] = useState("");
-    const [showpop, setShowpop] = useState(false);
-    const [blog, setBlog] = useState(null);
+  const article_holder = data.filter((item) => item.id > 0);
+  const article_holder2 = data.filter((item) => item.id == 1);
+  const article_holder3 = data.filter((item) => item.id <= 2);
+  const [jsonData, setJsonData] = useState(data);
+  const [showText, setShowText] = useState(false);
+  const [search,setSearch] = useState('');
+  const [showpop,setShowpop] = useState(false);
+  const [allBlogs, setAllBlogs] = useState(null);
+  const [blog,setblog] = useState(null);
 
-    return (
-        <div className="min-h-screen text-slate-950 flex flex-col items-center w-full bg-[#e8f1f5] bg-[url('https://www.transparenttextures.com/patterns/absurdity.png')] py-10">
+  useEffect(() => {
+    const getBlogs = async () => {
+      try {
+        const res = await axios.get("/api/blog");
+        console.log(res.data.blogs);
+        setAllBlogs(res.data.blogs);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    };
 
-            {/* Search Bar */}
-            <div className="mt-[70px] w-full flex justify-center mb-6">
-                <input
-                    placeholder="Search Articles..."
-                    className="py-3 px-4 rounded-md border border-gray-300 outline-none lg:w-[40vw] w-[60vw] shadow-sm focus:ring-2 focus:ring-blue-500 transition-all"
-                    onChange={(e) => setSearch(e.target.value)}
-                />
-            </div>
+    getBlogs();
+  }, []);
 
-            {/* Article Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-10">
-                {data
-                    .filter((article) =>
-                        article.heading.toLowerCase().includes(search.toLowerCase())
-                    )
-                    .map((article, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
-                        >
-                            <Carde blog={article} setshowpop={setShowpop} setblog={setBlog} />
-                        </div>
-                    ))}
-            </div>
-
-
-            {/* Modal Pop-up */}
-            {showpop && blog && (
-                <div
-                    className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm transition-all duration-300"
-                    onClick={() => setShowpop(false)}
-                >
-                    <div
-                        className="bg-white w-[90%] md:w-[50%] max-h-[80vh] overflow-y-auto rounded-lg shadow-lg p-6 relative animate-fade-in"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        {/* Close Button */}
-                        <button
-                            className="absolute top-3 right-5 text-gray-600 hover:text-black text-2xl"
-                            onClick={() => setShowpop(false)}
-                        >
-                            ✕
-                        </button>
-
-                        {/* Blog Content */}
-                        <Image src="/home/image2.jpg" alt="Blog Image" height={200} width={400} className="w-full h-auto rounded-lg mb-4" />
-                        <h2 className="text-2xl font-bold mb-2 text-gray-900">{blog.heading}</h2>
-                        <p className="text-sm text-gray-500 mb-4">{blog.date} - {blog.author}</p>
-                        <p className="text-md text-gray-800 leading-relaxed">{blog.content}</p>
-                    </div>
-                </div>
-            )}
+  return (
+    <div className="min-h-screen text-slate-950 absolute flex flex-col justify-center items-center w-full bg-[#e8f1f5] bg-[url('https://www.transparenttextures.com/patterns/absurdity.png')]" >
+      <div
+        className={`top-slider h-[300px] md:h-[600px] w-[100vw] flex justify-center relative mt-[100px]`}
+        onMouseEnter={() => setShowText(true)}
+        onMouseLeave={() => setShowText(false)}
+      >
+        <div
+          className={`absolute text-left h-full w-[90%] ${
+            showText ? "text-white custom-gradient" : "text-transparent"
+          } flex flex-col justify-center`}
+          style={{ transition: "normal 0.7s" }}
+        >
+          <h2 className="text-lg font-bold px-3 w-1/2 md:text-6xl md:pt-4">
+            Some title or Whatever
+          </h2>
+          <p className="text-xs font-light px-3 md:text-lg md:pt-4 w-1/2 text-gray-400">
+            {article_holder[0].author}
+          </p>
+          <p className="md:text-xl px-3 md:font-light md:pt-4 w-4/12 overflow-hidden mb-2 mt-1 md:block hidden">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae
+            tempus magna, id aliquam ligula. Sed ac sollicitudin mauris.
+            Praesent vulputate accumsan nulla. Cras fermentum ornare tellus, sit
+            amet accumsan leo posuere sed. Suspendisse ut felis at ante viverra
+            eleifend.
+          </p>
         </div>
-    );
-};
+        <img
+          src="/home/image2.jpg"
+          className="h-full w-[90%] object-cover custom-gradient"
+        />
+      </div>
 
+      <div className="search-area mt-[70px] flex justify-center mb-[30px]">
+        <input
+          placeholder="Search Articles"
+          className=" py-[10px] px-[10px] rounded-sm outline-none lg:w-[40vw] w-[60vw]"
+          onChange={(e)=>{
+            setSearch(e.target.value);
+          }}
+        ></input>
+        {/* <div className='border-2 rounded-r-xl bg-slate-400'>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="33" viewBox="0 0 50 50">
+                    <path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"></path>
+                    </svg>
+                </div> */}
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-16 mb-[100px] py-10 px-5 md:w-[90%]" >
+        {allBlogs &&
+          allBlogs.map((blog, index) => {
+            let title = blog?.title || " ";
+            if (title.toLowerCase().search(search.toLowerCase()) != -1 ) {
+              return (
+                  <div key={index}>
+                    <Carde blog={blog} setshowpop = {setShowpop} setblog = {setblog}/>
+                  </div>
+              )
+            }
+          })}
+      </div>
+      {showpop &&
+          <div className="fixed top-0 w-[100vw] h-[100vh] flex justify-center items-center bg-gray-800" onClick={()=>{setShowpop(false)}}>
+            <div className="h-[70%] w-[80%] bg-white overflow-y-scroll flex items-center flex-col py-[20px]" onClick={(e)=>{setShowpop(true);e.stopPropagation()}}>
+              <Image src={blog.img} alt="image" height={150} width={400} ></Image>
+              <div className="mt-[20px] text-2xl font-bold">{blog.title}</div>
+              <div dangerouslySetInnerHTML={{__html: blog.blogContent}} className="text-md text-gray-800 mt-[20px] px-[20px]"></div>
+            </div>
+          </div>
+      }
+    </div>
+  );
+};
 export default Events;

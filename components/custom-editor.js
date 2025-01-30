@@ -71,39 +71,44 @@ function CustomEditor(props) {
   const [image, setImage] = useState(null);
 
   const handleSubmitBlog = async () => {
-    console.log(credentials, blog);
-    if (
-      !credentials.email ||
-      !credentials.password ||
-      !blog ||
-      !title ||
-      !image
-    ) {
-      window.alert("Please fill all details");
-      return;
-    }
-
-    const body = new FormData();
-    body.append("file", image);
-    body.append("upload_preset", "fvfvpwdy");
-
     try {
-      const response = await axios.post(
+      console.log("Submitting blog:", { credentials, blog, title, image });
+  
+      if (!credentials.email || !credentials.password || !blog || !title || !image) {
+        alert("Please fill all details");
+        return;
+      }
+  
+      const body = new FormData();
+      body.append("file", image);
+      body.append("upload_preset", "fvfvpwdy");
+  
+      const imageResponse = await axios.post(
         "https://api.cloudinary.com/v1_1/dlba1yian/image/upload",
         body
       );
-      const { secure_url } = response.data;
-
-      console.log(secure_url);
-
+  
+      const { secure_url } = imageResponse.data;
+      console.log("Uploaded Image URL:", secure_url);
+  
       const res = await axios.post("/api/blog", {
-        blog: blog,
-        credentials: credentials,
-        title: title,
+        blog,
+        credentials,
+        title,
         img: secure_url,
       });
-    } catch (e) {}
+  
+      if (res.data.status === 201) {
+        alert("Blog submitted successfully!");
+      } else {
+        alert(res.data.message);
+      }
+    } catch (error) {
+      console.error("Error submitting blog:", error);
+      alert("Failed to submit the blog.");
+    }
   };
+  
 
   const handleCredentials = (e) => {
     setCredentials((initialVal) => ({
