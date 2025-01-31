@@ -52,7 +52,7 @@ const Events = () => {
             {article_holder[0].author}
           </p>
           <p className="md:text-xl px-3 md:font-light md:pt-4 w-4/12 overflow-hidden mb-2 mt-1 md:block hidden">
-          Introducing Numerator vs Denominator - the ultimate battle of wits and mathematical prowess, proudly presented by the MACS of IIT BHU. This electrifying event promises to be a thrilling journey through four intense rounds, showcasing the finest mathematical minds. Join us on at  2pm on 2nd February 2025 at LT-3  in this exhilarating mathematical extravaganza, where only the sharpest minds will prevail. Prepare to be challenged, inspired, and celebrated at Numerator vs Denominator. Don't miss your chance to witness and be a part of this epic event.
+          Introducing Numerator vs Denominator - the ultimate battle of wits and mathematical prowess, proudly presented by the MACS of IIT BHU. This electrifying event promises to be a thrilling journey through four intense rounds, showcasing the finest mathematical minds. Join us on at  2pm on 2nd February 2025 at LT-3  in this exhilarating mathematical extravaganza, where only the sharpest minds will prevail. Prepare to be challenged, inspired, and celebrated at Numerator vs Denominator. Do not miss your chance to witness and be a part of this epic event.
           </p>
         </div>
         <img
