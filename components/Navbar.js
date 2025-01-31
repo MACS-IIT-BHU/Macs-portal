@@ -31,11 +31,7 @@ export default function Navbar() {
           </button>
 
           {/* Navbar Links */}
-          <ul
-              className={`absolute left-0 right-0 top-full w-full bg-gradient-to-r from-cyan-600 to-cyan-500/60 md:static md:flex md:w-auto md:bg-transparent transition-all duration-300 gap-4${
-                  navbar ? "flex flex-col gap-3 py-4 px-6" : "hidden md:flex"
-              }`}
-          >
+          <ul className={`transition-all duration-300 md:flex gap-6 ${navbar ? "block" : "hidden md:flex"}`}>
             {[
               { href: "/", label: "Home" },
               { href: "/announcements", label: "Events" },
@@ -52,9 +48,8 @@ export default function Navbar() {
             ))}
           </ul>
 
-
           {/* User Auth Section */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center">
             {userData ? (
                 <div className="flex items-center gap-4">
                   <span className="text-white font-semibold">Welcome, {names}</span>
