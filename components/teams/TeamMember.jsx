@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link"
 import TeamName from "./TeamName";
 import Member from "./Member";
 import memImg from "../../public/home/pexels-pixabay-220453.jpg";
@@ -20,28 +21,24 @@ function TeamMember() {
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Core Team"} />
         <div className="flex flex-col md:flex-row gap-10">
-          <a 
-            href="https://www.iitbhu.ac.in/dept/mat/people/skpandeyapm"
-            className="no-underline text-inherit"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          <Member
-          name={"Prof SK Pandey"}
-          position={"President"}
-          image={skp}
-        /></a>
-        <a 
-          href="https://iitbhu.ac.in/dept/mat/people/rkpandeymat"
-          className="no-underline text-inherit"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        <Member
-          name={"Dr Rajesh Kumar Pandey"}
-          position={"Treasurer"}
-          image={rkp}
-         /></a>
+          <Link href="https://www.iitbhu.ac.in/dept/mat/people/skpandeyapm" passHref>
+            {/* <a className="no-underline text-inherit"> */}
+            <Member
+            name={"Prof SK Pandey"}
+            position={"President"}
+            image={skp}
+            />
+            {/* </a> */}
+          </Link>
+          <Link href="https://www.iitbhu.ac.in/dept/mat/people/rkpandeymat" passHref>
+            {/* <a className="no-underline text-inherit"> */}
+            <Member
+              name={"Dr Rajesh Kumar Pandey"}
+              position={"Treasurer"}
+              image={rkp}
+            />
+            {/* </a> */}
+          </Link>
         
         </div>
         <div className="flex flex-col md:flex-row gap-10">
@@ -61,17 +58,15 @@ function TeamMember() {
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Events Team"} />
         <div className="flex flex-col md:flex-row gap-10">
-          <a 
-            href="https://iitbhu.ac.in/dept/mat/people/vksinghmat"
-            className="no-underline text-inherit"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          <Member
-            name={"Dr. Vineet Kumar Singh"}
-            position={"Faculty Supervisor"}
-            image={vks}
-          /></a>
+          <Link href="https://www.iitbhu.ac.in/dept/mat/people/vksinghmat" passHref>
+            {/* <a className="no-underline text-inherit"> */}
+            <Member
+              name={"Dr. Vineet Kumar Singh"}
+              position={"Faculty Supervisor"}
+              image={vks}
+            />
+            {/* </a> */}
+          </Link>
           
         </div>
         <div className="flex flex-col md:flex-row gap-10">
@@ -90,29 +85,25 @@ function TeamMember() {
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Publications & Alumni Team"} />
         <div className="flex flex-col md:flex-row gap-10">
-        <a 
-          href="https://www.iitbhu.ac.in/dept/mat/people/lavanyasmat" 
-          className="no-underline text-inherit"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href="https://www.iitbhu.ac.in/dept/mat/people/lavanyasmat" passHref>
+          {/* <a className="no-underline text-inherit"> */}
           <Member
             name={"Dr. Lavanya Selvaganesh"}
             position={"Faculty Supervisor"}
             image={ls}
           />
-          </a>
-          <a 
-            href="https://www.iitbhu.ac.in/dept/mat/people/mukhosantapm"
-            className="no-underline text-inherit"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          {/* </a> */}
+        </Link>
+
+        <Link href="https://www.iitbhu.ac.in/dept/mat/people/mukhosantapm" passHref>
+          {/* <a className="no-underline text-inherit"> */}
           <Member
             name={"Prof. Santwana Mukhopadhyay"}
             position={"Faculty Supervisor"}
             image={sm}
-          /></a>
+          />
+          {/* </a> */}
+        </Link>
         </div>
         <div className="flex flex-col md:flex-row gap-10">
           <Member
