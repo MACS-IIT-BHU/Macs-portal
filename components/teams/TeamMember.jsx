@@ -21,7 +21,7 @@ function TeamMember() {
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Core Team"} />
         <div className="flex flex-col md:flex-row gap-10">
-          <Link href="https://www.iitbhu.ac.in/dept/mat/people/skpandeyapm" passHref>
+          {/* <Link href="https://www.iitbhu.ac.in/dept/mat/people/skpandeyapm" passHref> */}
             {/* <a className="no-underline text-inherit"> */}
             <Member
             name={"Prof SK Pandey"}
@@ -29,8 +29,8 @@ function TeamMember() {
             image={skp}
             />
             {/* </a> */}
-          </Link>
-          <Link href="https://www.iitbhu.ac.in/dept/mat/people/rkpandeymat" passHref>
+          {/* </Link> */}
+          {/* <Link href="https://www.iitbhu.ac.in/dept/mat/people/rkpandeymat" passHref> */}
             {/* <a className="no-underline text-inherit"> */}
             <Member
               name={"Dr Rajesh Kumar Pandey"}
@@ -38,7 +38,7 @@ function TeamMember() {
               image={rkp}
             />
             {/* </a> */}
-          </Link>
+          {/* </Link> */}
         
         </div>
         <div className="flex flex-col md:flex-row gap-10">
@@ -58,7 +58,7 @@ function TeamMember() {
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Events Team"} />
         <div className="flex flex-col md:flex-row gap-10">
-          <Link href="https://www.iitbhu.ac.in/dept/mat/people/vksinghmat" passHref>
+          {/* <Link href="https://www.iitbhu.ac.in/dept/mat/people/vksinghmat" passHref> */}
             {/* <a className="no-underline text-inherit"> */}
             <Member
               name={"Dr. Vineet Kumar Singh"}
@@ -66,7 +66,7 @@ function TeamMember() {
               image={vks}
             />
             {/* </a> */}
-          </Link>
+          {/* </Link> */}
           
         </div>
         <div className="flex flex-col md:flex-row gap-10">
@@ -85,7 +85,7 @@ function TeamMember() {
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Publications & Alumni Team"} />
         <div className="flex flex-col md:flex-row gap-10">
-        <Link href="https://www.iitbhu.ac.in/dept/mat/people/lavanyasmat" passHref>
+        {/* <Link href="https://www.iitbhu.ac.in/dept/mat/people/lavanyasmat" passHref> */}
           {/* <a className="no-underline text-inherit"> */}
           <Member
             name={"Dr. Lavanya Selvaganesh"}
@@ -93,9 +93,9 @@ function TeamMember() {
             image={ls}
           />
           {/* </a> */}
-        </Link>
+        {/* </Link> */}
 
-        <Link href="https://www.iitbhu.ac.in/dept/mat/people/mukhosantapm" passHref>
+        {/* <Link href="https://www.iitbhu.ac.in/dept/mat/people/mukhosantapm" passHref> */}
           {/* <a className="no-underline text-inherit"> */}
           <Member
             name={"Prof. Santwana Mukhopadhyay"}
@@ -103,7 +103,7 @@ function TeamMember() {
             image={sm}
           />
           {/* </a> */}
-        </Link>
+        {/* </Link> */}
         </div>
         <div className="flex flex-col md:flex-row gap-10">
           <Member
