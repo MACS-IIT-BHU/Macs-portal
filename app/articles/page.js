@@ -52,17 +52,14 @@ const Events = () => {
             {article_holder[0].author}
           </p>
           <p className="md:text-xl px-3 md:font-light md:pt-4 w-4/12 overflow-hidden mb-2 mt-1 md:block hidden">
-            We recently hosted Numerator vs Denominator, a thrilling mathematical showdown at our department.
-            The event featured rounds of puzzles, integration challenges, team buzzer quizzes, and an ultimate showdown.
-            With prizes worth INR 7k on the line, participants showcased their problem-solving skills and teamwork.
-            The competition concluded with champions celebrating their victory, highlighting the vibrant mathematics
-            community at IIT BHU and our commitment to fostering learning and competition.
+          Introducing Numerator vs Denominator - the ultimate battle of wits and mathematical prowess, proudly presented by the MACS of IIT BHU. This electrifying event promises to be a thrilling journey through four intense rounds, showcasing the finest mathematical minds. Join us on at  2pm on 2nd February 2025 at LT-3  in this exhilarating mathematical extravaganza, where only the sharpest minds will prevail. Prepare to be challenged, inspired, and celebrated at Numerator vs Denominator. Don't miss your chance to witness and be a part of this epic event.
           </p>
         </div>
         <img
-          src="/home/numvsden3.jpg"
+          src="/home/NumVsDen.jpg"
           className="h-full w-[90%] object-cover custom-gradient rounded-3xl"
         />
+
       </div>
 
       <div className="search-area mt-[70px] flex justify-center mb-[30px] rounded-2xl">
