@@ -5,12 +5,14 @@ import memImg from "../../public/home/pexels-pixabay-220453.jpg";
 import Sanyam from "../../public/home/sanyam.JPG";
 import Divyansh from "../../public/home/divyansh.jpg";
 import Pranathi from "../../public/home/pranathi.jpg";
+import kartik_malik from "../../public/home/kartik_malik.jpg"
+import akshat_shah from "../../public/home/akshat_shah.jpg"
+import chirag from "../../public/home/DP_CHIRAG.jpg"
 import skp from "../../public/home/skp2.png";
 import rkp from "../../public/home/rkp1.png";
 import vks from "../../public/home/vks1.png";
 import sm from "../../public/home/sm1.png";
 import ls from "../../public/home/ls1.png";
-
 
 function TeamMember() {
   return (
@@ -36,12 +38,12 @@ function TeamMember() {
         <Member
           name={"Kartik Malik"}
           position={"Vice President"}
-          image={memImg}
+          image={kartik_malik}
         />
         <Member
           name={"Akshat Shah"}
           position={"General Secretary"}
-          image={memImg}
+          image={akshat_shah}
          />
         </div>
         
@@ -91,7 +93,7 @@ function TeamMember() {
           <Member
             name={"Chirag Goel"}
             position={"Secretary"}
-            image={memImg}
+            image={chirag}
           />
           <Member
             name={"Pranathi S"}
