@@ -16,7 +16,7 @@ const UserEditForm = ({ user, onSubmit }) => {
   const [updatedUser, setUpdatedUser] = useState({
     name: user.name,
     email: user.email,
-    yearOfGraduation: user.yearOfGraduation,
+    yearOfJoining: user.yearOfJoining,
     github: user.github,
     linkedin: user.linkedin,
     skills: user.skills,
@@ -120,14 +120,14 @@ const UserEditForm = ({ user, onSubmit }) => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="yearOfGraduation" className="block text-gray-600">
-            Year of Graduation:
+          <label htmlFor="yearOfJoining" className="block text-gray-600">
+            Year of Joining:
           </label>
           <input
             type="text"
-            id="yearOfGraduation"
-            name="yearOfGraduation"
-            value={updatedUser.yearOfGraduation}
+            id="yearOfJoining"
+            name="yearOfJoining"
+            value={updatedUser.yearOfJoining}
             onChange={handleChange}
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
           />
@@ -177,7 +177,7 @@ const UserEditForm = ({ user, onSubmit }) => {
 
         <div className="mb-4">
           <label htmlFor="about" className="block text-gray-600">
-            About:
+            About: 
           </label>
           <textarea
             id="about"

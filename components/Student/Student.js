@@ -21,7 +21,7 @@ function Student({ key, event, student }) {
         {student.name.replace("5-Year IDD Mathematical Sciences", "")}
       </p>
       <h1 className="text-sm text-gray-400">
-        year of Graduation: {student.yearOfGraduation}
+        year of Joining: {student.yearOfJoining}
       </h1>
       <div className="flex gap-2 mt-4">
         <Link href={student.github}>

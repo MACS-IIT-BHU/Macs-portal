@@ -25,6 +25,7 @@ const UserProfilePage = ({ params }) => {
       try {
         const res = await axios.get(`/api/users/me?user=${params.id}`);
         setUser(res.data.data);
+        console.log(res.data.data)
         var name = res.data.data.name;
         var si = name.length;
         let k = si-1;
@@ -61,6 +62,15 @@ const UserProfilePage = ({ params }) => {
       console.log(error);
     }
   };
+
+  function extractYear(email) {
+    const match = email.match(/\D(\d{2})@/);
+    
+    return match ? match[1] : 26;
+
+}
+
+
 
   return (
     <div className="relative min-h-[100vh] mb-20 pt-20 flex justify-center ">
@@ -116,17 +126,11 @@ const UserProfilePage = ({ params }) => {
                 ) : (
                   <>
                     <div className="relative text-xl  mt-2">
-                      yearOfGraduation: {user.yearOfGraduation}
+                      Joining Year: 20{extractYear(user.email)}
                     </div>
                     <div className="mt-6">
-                      <p>
-                        lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur.
+                      <p> About :  
+                        {user.about && user.about}
                       </p>
 
                       {/* <p>{user.about}</p> */}
@@ -156,12 +160,12 @@ const UserProfilePage = ({ params }) => {
                         </a>
                       )}
 
-                      <a className="flex gap-2 items-center" href="#">
+                      {/* <a className="flex gap-2 items-center" href="#">
                         <AiOutlineGlobal size={25} />
                         <span className="text-blue-400/60 underline">
                           Portfolio
                         </span>
-                      </a>
+                      </a> */}
                     </div>
                     <div className="w-full h-[2px] bg-blue-500/40 mt-5 rounded-md"></div>
                     <div className="mt-4 flex gap-4 items-center justify-center">
