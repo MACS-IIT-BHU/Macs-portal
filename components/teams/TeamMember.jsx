@@ -20,13 +20,23 @@ function TeamMember() {
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Core Team"} />
         <div className="flex flex-col md:flex-row gap-10">
-          <a href="https://www.iitbhu.ac.in/dept/mat/people/skpandeyapm">
+          <a 
+            href="https://www.iitbhu.ac.in/dept/mat/people/skpandeyapm"
+            className="no-underline text-inherit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
           <Member
           name={"Prof SK Pandey"}
           position={"President"}
           image={skp}
         /></a>
-        <a href="https://iitbhu.ac.in/dept/mat/people/rkpandeymat">
+        <a 
+          href="https://iitbhu.ac.in/dept/mat/people/rkpandeymat"
+          className="no-underline text-inherit"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
         <Member
           name={"Dr Rajesh Kumar Pandey"}
           position={"Treasurer"}
@@ -51,7 +61,12 @@ function TeamMember() {
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Events Team"} />
         <div className="flex flex-col md:flex-row gap-10">
-          <a href="https://iitbhu.ac.in/dept/mat/people/vksinghmat">
+          <a 
+            href="https://iitbhu.ac.in/dept/mat/people/vksinghmat"
+            className="no-underline text-inherit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
           <Member
             name={"Dr. Vineet Kumar Singh"}
             position={"Faculty Supervisor"}
@@ -75,14 +90,24 @@ function TeamMember() {
       <div className="flex w-full  flex-col  items-center justify-center gap-10 ">
         <TeamName team={"Publications & Alumni Team"} />
         <div className="flex flex-col md:flex-row gap-10">
-          <a href="https://www.iitbhu.ac.in/dept/mat/people/lavanyasmat">
+        <a 
+          href="https://www.iitbhu.ac.in/dept/mat/people/lavanyasmat" 
+          className="no-underline text-inherit"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Member
             name={"Dr. Lavanya Selvaganesh"}
             position={"Faculty Supervisor"}
             image={ls}
           />
           </a>
-          <a href="https://www.iitbhu.ac.in/dept/mat/people/mukhosantapm">
+          <a 
+            href="https://www.iitbhu.ac.in/dept/mat/people/mukhosantapm"
+            className="no-underline text-inherit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
           <Member
             name={"Prof. Santwana Mukhopadhyay"}
             position={"Faculty Supervisor"}
